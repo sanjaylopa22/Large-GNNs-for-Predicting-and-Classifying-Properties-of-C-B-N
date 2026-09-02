@@ -1,0 +1,396 @@
+root@fd0d8cc95e4d:~/my_codes/cgcnn_new# python main.py -h
+usage: main.py [-h] [--task {regression,classification}] [--disable-cuda] [-j N] [--epochs N] [--start-epoch N] [-b N] [--lr LR] [--lr-milestones N [N ...]] [--momentum M] [--weight-decay W] [--print-freq N] [--resume PATH] [--train-ratio N | --train-size N]
+               [--val-ratio N | --val-size N] [--test-ratio N | --test-size N] [--optim SGD] [--atom-fea-len N] [--h-fea-len N] [--n-conv N] [--n-h N]
+               OPTIONS [OPTIONS ...]
+
+Crystal Graph Convolutional Neural Networks
+
+positional arguments:
+  OPTIONS               dataset options, started with the path to root dir, then other options
+
+options:
+  -h, --help            show this help message and exit
+  --task {regression,classification}
+                        complete a regression or classification task (default: regression)
+  --disable-cuda        Disable CUDA
+  -j N, --workers N     number of data loading workers (default: 0)
+  --epochs N            number of total epochs to run (default: 30)
+  --start-epoch N       manual epoch number (useful on restarts)
+  -b N, --batch-size N  mini-batch size (default: 256)
+  --lr LR, --learning-rate LR
+                        initial learning rate (default: 0.01)
+  --lr-milestones N [N ...]
+                        milestones for scheduler (default: [100])
+  --momentum M          momentum
+  --weight-decay W, --wd W
+                        weight decay (default: 0)
+  --print-freq N, -p N  print frequency (default: 10)
+  --resume PATH         path to latest checkpoint (default: none)
+  --train-ratio N       number of training data to be loaded (default none)
+  --train-size N        number of training data to be loaded (default none)
+  --val-ratio N         percentage of validation data to be loaded (default 0.1)
+  --val-size N          number of validation data to be loaded (default 1000)
+  --test-ratio N        percentage of test data to be loaded (default 0.1)
+  --test-size N         number of test data to be loaded (default 1000)
+  --optim SGD           choose an optimizer, SGD or Adam, (default: SGD)
+  --atom-fea-len N      number of hidden atom features in conv layers
+  --h-fea-len N         number of hidden features after pooling
+  --n-conv N            number of conv layers
+  --n-h N               number of hidden layers after pooling
+root@fd0d8cc95e4d:~/my_codes/cgcnn_new# python predict.py -h
+usage: predict.py [-h] [-b N] [-j N] [--disable-cuda] [--print-freq N] modelpath cifpath
+
+
+#Commands
+#Train a CGCNN model
+
+python main.py root_dir
+python main.py --train-size 6 --val-size 2 --test-size 2 data/sample-regression
+python main.py --train-ratio 0.6 --val-ratio 0.2 --test-ratio 0.2 data/sample-regression
+
+#Predict material properties with a pre-trained CGCNN model
+# Create id_prop.csv file with the test materials and their original formation energy values under root_dir
+
+python predict.py pre-trained/formation-energy-per-atom.pth root_dir
+
+
+Crystal gated neural networks
+
+positional arguments:
+  modelpath             path to the trained model.
+  cifpath               path to the directory of CIF files.
+
+options:
+  -h, --help            show this help message and exit
+  -b N, --batch-size N  mini-batch size (default: 256)
+  -j N, --workers N     number of data loading workers (default: 0)
+  --disable-cuda        Disable CUDA
+  --print-freq N, -p N  print frequency (default: 10)
+root@fd0d8cc95e4d:~/my_codes/cgcnn_new# python main.py --train-size 6 --val-size 2 --test-size 2 data/sample-regression
+/root/my_codes/cgcnn_new/main.py:117: UserWarning: Dataset has less than 500 data points. Lower accuracy is expected. 
+  warnings.warn('Dataset has less than 500 data points. '
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3087: UserWarning: Issues encountered while parsing CIF: 4 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+Epoch: [0][0/1]	Time 0.471 (0.471)	Data 0.002 (0.002)	Loss 1.5221 (1.5221)	MAE 3.021 (3.021)
+Test: [0/1]	Time 0.002 (0.002)	Loss 78.8010 (78.8010)	MAE 26.742 (26.742)
+ * MAE 26.742
+Epoch: [1][0/1]	Time 0.009 (0.009)	Data 0.000 (0.000)	Loss 3.9679 (3.9679)	MAE 5.512 (5.512)
+Test: [0/1]	Time 0.001 (0.001)	Loss 22.3713 (22.3713)	MAE 14.125 (14.125)
+ * MAE 14.125
+Epoch: [2][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 3.4909 (3.4909)	MAE 5.514 (5.514)
+Test: [0/1]	Time 0.001 (0.001)	Loss 0.9879 (0.9879)	MAE 2.449 (2.449)
+ * MAE 2.449
+Epoch: [3][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.2078 (0.2078)	MAE 1.219 (1.219)
+Test: [0/1]	Time 0.001 (0.001)	Loss 5.7502 (5.7502)	MAE 6.828 (6.828)
+ * MAE 6.828
+Epoch: [4][0/1]	Time 0.003 (0.003)	Data 0.000 (0.000)	Loss 1.7311 (1.7311)	MAE 3.770 (3.770)
+Test: [0/1]	Time 0.001 (0.001)	Loss 1.1237 (1.1237)	MAE 2.451 (2.451)
+ * MAE 2.451
+Epoch: [5][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.1640 (0.1640)	MAE 1.030 (1.030)
+Test: [0/1]	Time 0.001 (0.001)	Loss 0.7090 (0.7090)	MAE 2.446 (2.446)
+ * MAE 2.446
+Epoch: [6][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.6780 (0.6780)	MAE 2.318 (2.318)
+Test: [0/1]	Time 0.001 (0.001)	Loss 0.6678 (0.6678)	MAE 2.453 (2.453)
+ * MAE 2.453
+Epoch: [7][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.5937 (0.5937)	MAE 2.191 (2.191)
+Test: [0/1]	Time 0.001 (0.001)	Loss 0.8823 (0.8823)	MAE 2.461 (2.461)
+ * MAE 2.461
+Epoch: [8][0/1]	Time 0.003 (0.003)	Data 0.000 (0.000)	Loss 0.0681 (0.0681)	MAE 0.673 (0.673)
+Test: [0/1]	Time 0.002 (0.002)	Loss 1.5871 (1.5871)	MAE 2.914 (2.914)
+ * MAE 2.914
+Epoch: [9][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.2295 (0.2295)	MAE 1.333 (1.333)
+Test: [0/1]	Time 0.001 (0.001)	Loss 1.9611 (1.9611)	MAE 3.456 (3.456)
+ * MAE 3.456
+Epoch: [10][0/1]	Time 0.003 (0.003)	Data 0.000 (0.000)	Loss 0.4070 (0.4070)	MAE 1.885 (1.885)
+Test: [0/1]	Time 0.001 (0.001)	Loss 1.6518 (1.6518)	MAE 3.021 (3.021)
+ * MAE 3.021
+Epoch: [11][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.1891 (0.1891)	MAE 1.271 (1.271)
+Test: [0/1]	Time 0.001 (0.001)	Loss 1.1484 (1.1484)	MAE 2.447 (2.447)
+ * MAE 2.447
+Epoch: [12][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.0144 (0.0144)	MAE 0.292 (0.292)
+Test: [0/1]	Time 0.001 (0.001)	Loss 0.8461 (0.8461)	MAE 2.441 (2.441)
+ * MAE 2.441
+Epoch: [13][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.0915 (0.0915)	MAE 0.866 (0.866)
+Test: [0/1]	Time 0.001 (0.001)	Loss 0.7573 (0.7573)	MAE 2.435 (2.435)
+ * MAE 2.435
+Epoch: [14][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.1926 (0.1926)	MAE 1.306 (1.306)
+Test: [0/1]	Time 0.001 (0.001)	Loss 0.8036 (0.8036)	MAE 2.432 (2.432)
+ * MAE 2.432
+Epoch: [15][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.1385 (0.1385)	MAE 1.108 (1.108)
+Test: [0/1]	Time 0.001 (0.001)	Loss 0.9789 (0.9789)	MAE 2.429 (2.429)
+ * MAE 2.429
+Epoch: [16][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.0346 (0.0346)	MAE 0.499 (0.499)
+Test: [0/1]	Time 0.001 (0.001)	Loss 1.2581 (1.2581)	MAE 2.425 (2.425)
+ * MAE 2.425
+Epoch: [17][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.0169 (0.0169)	MAE 0.280 (0.280)
+Test: [0/1]	Time 0.001 (0.001)	Loss 1.5288 (1.5288)	MAE 2.857 (2.857)
+ * MAE 2.857
+Epoch: [18][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.0685 (0.0685)	MAE 0.705 (0.705)
+Test: [0/1]	Time 0.001 (0.001)	Loss 1.6538 (1.6538)	MAE 3.056 (3.056)
+ * MAE 3.056
+Epoch: [19][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.0996 (0.0996)	MAE 0.900 (0.900)
+Test: [0/1]	Time 0.001 (0.001)	Loss 1.5856 (1.5856)	MAE 2.955 (2.955)
+ * MAE 2.955
+Epoch: [20][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.0723 (0.0723)	MAE 0.764 (0.764)
+Test: [0/1]	Time 0.001 (0.001)	Loss 1.3958 (1.3958)	MAE 2.647 (2.647)
+ * MAE 2.647
+Epoch: [21][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.0268 (0.0268)	MAE 0.407 (0.407)
+Test: [0/1]	Time 0.002 (0.002)	Loss 1.1905 (1.1905)	MAE 2.403 (2.403)
+ * MAE 2.403
+Epoch: [22][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.0091 (0.0091)	MAE 0.248 (0.248)
+Test: [0/1]	Time 0.001 (0.001)	Loss 1.0354 (1.0354)	MAE 2.399 (2.399)
+ * MAE 2.399
+Epoch: [23][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.0234 (0.0234)	MAE 0.374 (0.374)
+Test: [0/1]	Time 0.001 (0.001)	Loss 0.9487 (0.9487)	MAE 2.395 (2.395)
+ * MAE 2.395
+Epoch: [24][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.0435 (0.0435)	MAE 0.581 (0.581)
+Test: [0/1]	Time 0.002 (0.002)	Loss 0.9252 (0.9252)	MAE 2.390 (2.390)
+ * MAE 2.390
+Epoch: [25][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.0449 (0.0449)	MAE 0.600 (0.600)
+Test: [0/1]	Time 0.001 (0.001)	Loss 0.9541 (0.9541)	MAE 2.385 (2.385)
+ * MAE 2.385
+Epoch: [26][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.0267 (0.0267)	MAE 0.448 (0.448)
+Test: [0/1]	Time 0.001 (0.001)	Loss 1.0211 (1.0211)	MAE 2.381 (2.381)
+ * MAE 2.381
+Epoch: [27][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.0082 (0.0082)	MAE 0.215 (0.215)
+Test: [0/1]	Time 0.003 (0.003)	Loss 1.1018 (1.1018)	MAE 2.376 (2.376)
+ * MAE 2.376
+Epoch: [28][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.0061 (0.0061)	MAE 0.215 (0.215)
+Test: [0/1]	Time 0.002 (0.002)	Loss 1.1623 (1.1623)	MAE 2.371 (2.371)
+ * MAE 2.371
+Epoch: [29][0/1]	Time 0.004 (0.004)	Data 0.000 (0.000)	Loss 0.0176 (0.0176)	MAE 0.343 (0.343)
+Test: [0/1]	Time 0.001 (0.001)	Loss 1.1721 (1.1721)	MAE 2.368 (2.368)
+ * MAE 2.368
+---------Evaluate Model on Test Set---------------
+/root/my_codes/cgcnn_new/main.py:204: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  best_checkpoint = torch.load('model_best.pth.tar')
+Test: [0/1]	Time 0.002 (0.002)	Loss 1.9231 (1.9231)	MAE 3.855 (3.855)
+ ** MAE 3.855
+
+
+
+
+
+root@fd0d8cc95e4d:~/my_codes/cgcnn_new# python main.py --task classification --train-size 5 --val-size 2 --test-size 3 data/sample-classification
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3087: UserWarning: Issues encountered while parsing CIF: 4 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+Epoch: [0][0/1]	Time 0.533 (0.533)	Data 0.034 (0.034)	Loss 0.6359 (0.6359)	Accu 0.800 (0.800)	Precision 1.000 (1.000)	Recall 0.500 (0.500)	F1 0.667 (0.667)	AUC 0.500 (0.500)
+Test: [0/1]	Time 0.012 (0.012)	Loss 1.3169 (1.3169)	Accu 0.500 (0.500)	Precision 0.500 (0.500)	Recall 1.000 (1.000)	F1 0.667 (0.667)	AUC 0.000 (0.000)
+ * AUC 0.000
+Epoch: [1][0/1]	Time 0.010 (0.010)	Data 0.000 (0.000)	Loss 0.4687 (0.4687)	Accu 0.800 (0.800)	Precision 1.000 (1.000)	Recall 0.500 (0.500)	F1 0.667 (0.667)	AUC 0.833 (0.833)
+Test: [0/1]	Time 0.004 (0.004)	Loss 2.5209 (2.5209)	Accu 0.500 (0.500)	Precision 0.500 (0.500)	Recall 1.000 (1.000)	F1 0.667 (0.667)	AUC 0.000 (0.000)
+ * AUC 0.000
+Epoch: [2][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.4468 (0.4468)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+Test: [0/1]	Time 0.003 (0.003)	Loss 3.1326 (3.1326)	Accu 0.500 (0.500)	Precision 0.500 (0.500)	Recall 1.000 (1.000)	F1 0.667 (0.667)	AUC 0.000 (0.000)
+ * AUC 0.000
+Epoch: [3][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.5208 (0.5208)	Accu 0.600 (0.600)	Precision 0.500 (0.500)	Recall 1.000 (1.000)	F1 0.667 (0.667)	AUC 1.000 (1.000)
+Test: [0/1]	Time 0.003 (0.003)	Loss 2.7857 (2.7857)	Accu 0.500 (0.500)	Precision 0.500 (0.500)	Recall 1.000 (1.000)	F1 0.667 (0.667)	AUC 0.000 (0.000)
+ * AUC 0.000
+Epoch: [4][0/1]	Time 0.006 (0.006)	Data 0.000 (0.000)	Loss 1.1051 (1.1051)	Accu 0.400 (0.400)	Precision 0.400 (0.400)	Recall 1.000 (1.000)	F1 0.571 (0.571)	AUC 0.833 (0.833)
+Test: [0/1]	Time 0.003 (0.003)	Loss 1.1134 (1.1134)	Accu 0.500 (0.500)	Precision 0.500 (0.500)	Recall 1.000 (1.000)	F1 0.667 (0.667)	AUC 0.000 (0.000)
+ * AUC 0.000
+Epoch: [5][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.4137 (0.4137)	Accu 0.800 (0.800)	Precision 0.667 (0.667)	Recall 1.000 (1.000)	F1 0.800 (0.800)	AUC 1.000 (1.000)
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.003 (0.003)	Loss 0.7128 (0.7128)	Accu 0.500 (0.500)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 1.000 (1.000)
+ * AUC 1.000
+Epoch: [6][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.4595 (0.4595)	Accu 0.800 (0.800)	Precision 1.000 (1.000)	Recall 0.500 (0.500)	F1 0.667 (0.667)	AUC 1.000 (1.000)
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.003 (0.003)	Loss 0.8082 (0.8082)	Accu 0.500 (0.500)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 1.000 (1.000)
+ * AUC 1.000
+Epoch: [7][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.2919 (0.2919)	Accu 0.800 (0.800)	Precision 1.000 (1.000)	Recall 0.500 (0.500)	F1 0.667 (0.667)	AUC 1.000 (1.000)
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.003 (0.003)	Loss 0.7721 (0.7721)	Accu 0.500 (0.500)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 1.000 (1.000)
+ * AUC 1.000
+Epoch: [8][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.5896 (0.5896)	Accu 0.800 (0.800)	Precision 1.000 (1.000)	Recall 0.500 (0.500)	F1 0.667 (0.667)	AUC 0.833 (0.833)
+Test: [0/1]	Time 0.003 (0.003)	Loss 0.6940 (0.6940)	Accu 0.500 (0.500)	Precision 0.500 (0.500)	Recall 1.000 (1.000)	F1 0.667 (0.667)	AUC 0.000 (0.000)
+ * AUC 0.000
+Epoch: [9][0/1]	Time 0.006 (0.006)	Data 0.000 (0.000)	Loss 0.0343 (0.0343)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+Test: [0/1]	Time 0.003 (0.003)	Loss 0.7495 (0.7495)	Accu 0.500 (0.500)	Precision 0.500 (0.500)	Recall 1.000 (1.000)	F1 0.667 (0.667)	AUC 0.000 (0.000)
+ * AUC 0.000
+Epoch: [10][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.1726 (0.1726)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+Test: [0/1]	Time 0.003 (0.003)	Loss 0.7485 (0.7485)	Accu 0.500 (0.500)	Precision 0.500 (0.500)	Recall 1.000 (1.000)	F1 0.667 (0.667)	AUC 0.000 (0.000)
+ * AUC 0.000
+Epoch: [11][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.1042 (0.1042)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+Test: [0/1]	Time 0.003 (0.003)	Loss 0.7104 (0.7104)	Accu 0.500 (0.500)	Precision 0.500 (0.500)	Recall 1.000 (1.000)	F1 0.667 (0.667)	AUC 0.000 (0.000)
+ * AUC 0.000
+Epoch: [12][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.2203 (0.2203)	Accu 0.800 (0.800)	Precision 0.667 (0.667)	Recall 1.000 (1.000)	F1 0.800 (0.800)	AUC 1.000 (1.000)
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.003 (0.003)	Loss 0.7720 (0.7720)	Accu 0.500 (0.500)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 0.000 (0.000)
+ * AUC 0.000
+Epoch: [13][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.0898 (0.0898)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.003 (0.003)	Loss 1.0225 (1.0225)	Accu 0.500 (0.500)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 0.000 (0.000)
+ * AUC 0.000
+Epoch: [14][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.0251 (0.0251)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.004 (0.004)	Loss 1.3122 (1.3122)	Accu 0.500 (0.500)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 1.000 (1.000)
+ * AUC 1.000
+Epoch: [15][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.0258 (0.0258)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.003 (0.003)	Loss 1.5534 (1.5534)	Accu 0.500 (0.500)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 1.000 (1.000)
+ * AUC 1.000
+Epoch: [16][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.0011 (0.0011)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.003 (0.003)	Loss 1.7891 (1.7891)	Accu 0.500 (0.500)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 1.000 (1.000)
+ * AUC 1.000
+Epoch: [17][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.0050 (0.0050)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.003 (0.003)	Loss 2.0062 (2.0062)	Accu 0.500 (0.500)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 1.000 (1.000)
+ * AUC 1.000
+Epoch: [18][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.3221 (0.3221)	Accu 0.800 (0.800)	Precision 1.000 (1.000)	Recall 0.500 (0.500)	F1 0.667 (0.667)	AUC 1.000 (1.000)
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.003 (0.003)	Loss 1.7437 (1.7437)	Accu 0.500 (0.500)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 1.000 (1.000)
+ * AUC 1.000
+Epoch: [19][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.0721 (0.0721)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.003 (0.003)	Loss 1.3989 (1.3989)	Accu 0.500 (0.500)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 1.000 (1.000)
+ * AUC 1.000
+Epoch: [20][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.1146 (0.1146)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.003 (0.003)	Loss 1.1782 (1.1782)	Accu 0.500 (0.500)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 1.000 (1.000)
+ * AUC 1.000
+Epoch: [21][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.0054 (0.0054)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.003 (0.003)	Loss 0.9985 (0.9985)	Accu 0.500 (0.500)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 1.000 (1.000)
+ * AUC 1.000
+Epoch: [22][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.0034 (0.0034)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.004 (0.004)	Loss 0.8663 (0.8663)	Accu 0.500 (0.500)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 1.000 (1.000)
+ * AUC 1.000
+Epoch: [23][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.0095 (0.0095)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.003 (0.003)	Loss 0.7776 (0.7776)	Accu 0.500 (0.500)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 1.000 (1.000)
+ * AUC 1.000
+Epoch: [24][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.0005 (0.0005)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.003 (0.003)	Loss 0.7147 (0.7147)	Accu 0.500 (0.500)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 1.000 (1.000)
+ * AUC 1.000
+Epoch: [25][0/1]	Time 0.006 (0.006)	Data 0.000 (0.000)	Loss 0.0027 (0.0027)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.003 (0.003)	Loss 0.6730 (0.6730)	Accu 0.500 (0.500)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 1.000 (1.000)
+ * AUC 1.000
+Epoch: [26][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.0022 (0.0022)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.003 (0.003)	Loss 0.6455 (0.6455)	Accu 0.500 (0.500)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 1.000 (1.000)
+ * AUC 1.000
+Epoch: [27][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.0001 (0.0001)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.003 (0.003)	Loss 0.6270 (0.6270)	Accu 0.500 (0.500)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 1.000 (1.000)
+ * AUC 1.000
+Epoch: [28][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.0058 (0.0058)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+Test: [0/1]	Time 0.003 (0.003)	Loss 0.6158 (0.6158)	Accu 1.000 (1.000)	Precision 1.000 (1.000)	Recall 1.000 (1.000)	F1 1.000 (1.000)	AUC 1.000 (1.000)
+ * AUC 1.000
+Epoch: [29][0/1]	Time 0.005 (0.005)	Data 0.000 (0.000)	Loss 0.1503 (0.1503)	Accu 0.800 (0.800)	Precision 1.000 (1.000)	Recall 0.500 (0.500)	F1 0.667 (0.667)	AUC 1.000 (1.000)
+Test: [0/1]	Time 0.003 (0.003)	Loss 0.6260 (0.6260)	Accu 0.500 (0.500)	Precision 0.500 (0.500)	Recall 1.000 (1.000)	F1 0.667 (0.667)	AUC 1.000 (1.000)
+ * AUC 1.000
+---------Evaluate Model on Test Set---------------
+/root/my_codes/cgcnn_new/main.py:204: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  best_checkpoint = torch.load('model_best.pth.tar')
+/opt/conda/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1531: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 due to no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+Test: [0/1]	Time 0.032 (0.032)	Loss 0.8016 (0.8016)	Accu 0.333 (0.333)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 0.500 (0.500)
+ ** AUC 0.500
+
+
+
+
+
+
+
+root@fd0d8cc95e4d:~/my_codes/cgcnn_new# python predict.py pre-trained/semi-metal-classification.pth data/sample-classification
+=> loading model params 'pre-trained/semi-metal-classification.pth'
+/root/my_codes/cgcnn_new/predict.py:33: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model_checkpoint = torch.load(args.modelpath,
+=> loaded model params 'pre-trained/semi-metal-classification.pth'
+=> loading model 'pre-trained/semi-metal-classification.pth'
+/root/my_codes/cgcnn_new/predict.py:93: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(args.modelpath,
+=> loaded model 'pre-trained/semi-metal-classification.pth' (epoch 92, validation 0.958599858597622)
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3087: UserWarning: Issues encountered while parsing CIF: 4 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+Test: [0/1]	Time 0.195 (0.195)	Loss 4.3772 (4.3772)	Accu 0.200 (0.200)	Precision 0.000 (0.000)	Recall 0.000 (0.000)	F1 0.000 (0.000)	AUC 0.240 (0.240)
+ ** AUC 0.240
+ 
+ 
+root@fd0d8cc95e4d:~/my_codes/cgcnn_new# python predict.py pre-trained/formation-energy-per-atom.pth data/sample-regression
+=> loading model params 'pre-trained/formation-energy-per-atom.pth'
+/root/my_codes/cgcnn_new/predict.py:33: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model_checkpoint = torch.load(args.modelpath,
+=> loaded model params 'pre-trained/formation-energy-per-atom.pth'
+=> loading model 'pre-trained/formation-energy-per-atom.pth'
+/root/my_codes/cgcnn_new/predict.py:93: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(args.modelpath,
+=> loaded model 'pre-trained/formation-energy-per-atom.pth' (epoch 968, validation 0.03972001800748568)
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3087: UserWarning: Issues encountered while parsing CIF: 4 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+Test: [0/1]	Time 0.190 (0.190)	Loss 47.2614 (47.2614)	MAE 6.902 (6.902)
+ ** MAE 6.902
+ 
+ 
+ #For 211 test materials
+ 
+root@fd3643bcbac3:~/my_codes/cgcnn_new# python predict_new.py pre-trained/formation-energy-per-atom.pth data/sample-regression
+=> loading model params 'pre-trained/formation-energy-per-atom.pth'
+/root/my_codes/cgcnn_new/predict_new.py:27: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model_checkpoint = torch.load(args.modelpath, map_location=lambda storage, loc: storage)
+=> loaded model params 'pre-trained/formation-energy-per-atom.pth'
+=> loading model 'pre-trained/formation-energy-per-atom.pth'
+/root/my_codes/cgcnn_new/predict_new.py:71: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(args.modelpath, map_location=lambda storage, loc: storage)
+=> loaded model 'pre-trained/formation-energy-per-atom.pth' (epoch 968, validation 0.03972001800748568)
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 2 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 4 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 8 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+Batch [1/7]: Batch MAE = 5.7570, Batch MSE = 45.7946, Samples = 32
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 12 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/composition.py:329: UserWarning: No Pauling electronegativity for He. Setting to NaN. This has no physical meaning, and is mainly done to avoid errors caused by the code expecting a float.
+  return sum((el.X * abs(amt) for el, amt in self.items())) / self.num_atoms
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 24 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+Batch [2/7]: Batch MAE = 4.9163, Batch MSE = 36.0550, Samples = 32
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 10 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 16 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+Batch [3/7]: Batch MAE = 5.1425, Batch MSE = 37.6094, Samples = 32
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 7 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+Batch [4/7]: Batch MAE = 5.9038, Batch MSE = 46.6532, Samples = 32
+/root/my_codes/cgcnn_new/cgcnn/data.py:334: UserWarning: mp-1179832_Rb not find enough neighbors to build graph. If it happens frequently, consider increase radius.
+  warnings.warn('{} not find enough neighbors to build graph. '
+Batch [5/7]: Batch MAE = 5.0484, Batch MSE = 35.3131, Samples = 32
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 6 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+Batch [6/7]: Batch MAE = 5.8298, Batch MSE = 42.5452, Samples = 32
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 18 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+Batch [7/7]: Batch MAE = 5.7951, Batch MSE = 42.7533, Samples = 19
+
+ ** Final Results over 211 samples: MAE = 5.4656, MSE = 40.8501 **
+
+
+
+

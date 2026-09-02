@@ -1,0 +1,244 @@
+root@fd3643bcbac3:~/my_codes/cgcnn_new# python predict.py pre-trained/formation-energy-per-atom.pth data/regression
+=> loading model params 'pre-trained/formation-energy-per-atom.pth'
+=> loaded model params 'pre-trained/formation-energy-per-atom.pth'
+=> loading model 'pre-trained/formation-energy-per-atom.pth'
+=> loaded model 'pre-trained/formation-energy-per-atom.pth' (epoch 968, validation 0.03972001800748568)
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 4 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 10 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 2 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 7 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 12 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 16 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 6 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+^[/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 8 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 24 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/structure.py:3109: UserWarning: Issues encountered while parsing CIF: 18 fractional coordinates rounded to ideal values to avoid issues with finite precision.
+  struct = parser.parse_structures(primitive=primitive)[0]
+/opt/conda/lib/python3.11/site-packages/pymatgen/core/composition.py:329: UserWarning: No Pauling electronegativity for He. Setting to NaN. This has no physical meaning, and is mainly done to avoid errors caused by the code expecting a float.
+  return sum((el.X * abs(amt) for el, amt in self.items())) / self.num_atoms
+/root/my_codes/cgcnn_new/cgcnn/data.py:334: UserWarning: mp-1179832_Rb not find enough neighbors to build graph. If it happens frequently, consider increase radius.
+  warnings.warn('{} not find enough neighbors to build graph. '
+Test: [0/1]	Time 1.225 (1.225)	Loss 0.1707 (0.1707)	MAE 0.221 (0.221)	MSE 0.191 (0.191)
+
+Predicted formation energies with material formulas:
+mp-11698_Tb: Target = 0.0030, Predicted = 0.0273
+mp-11343_Th: Target = 0.1520, Predicted = -0.0079
+mp-10753_Er: Target = 0.1390, Predicted = -0.0031
+mp-21848_F2: Target = 0.7790, Predicted = -0.9380
+mp-8635_Zr: Target = 0.0570, Predicted = -0.0245
+mp-1938_Al2O3: Target = -3.3330, Predicted = -3.3504
+mp-542909_Mn: Target = 0.0400, Predicted = 0.0870
+mp-20372_Ce: Target = 0.0750, Predicted = 0.3658
+mp-1456_Fe2O3: Target = -1.5880, Predicted = -1.7869
+mp-2647044_Ta: Target = 0.2850, Predicted = 0.0668
+mp-2646972_Zn: Target = 0.0050, Predicted = -0.0175
+mp-22862_NaCl: Target = -2.0380, Predicted = -2.1112
+mp-12883_P: Target = 0.1550, Predicted = 0.1143
+mp-556269_S: Target = 0.0310, Predicted = -0.5210
+mp-557376_S: Target = 0.0270, Predicted = -0.5061
+mp-11446_Tb: Target = 0.1240, Predicted = 0.0502
+mp-573697_CsCl: Target = -2.2450, Predicted = -2.2494
+mp-1096835_Ba: Target = 0.5140, Predicted = 0.0964
+mp-7098_Np: Target = 0.0790, Predicted = -0.0230
+mp-8632_V: Target = 0.2470, Predicted = 0.0792
+mp-10658_Dy: Target = 0.0120, Predicted = 0.0191
+mp-21462_Eu: Target = 0.0000, Predicted = 0.0296
+mp-22851_NaCl: Target = -1.8840, Predicted = -1.9709
+mp-3347313_C: Target = 0.0000, Predicted = 0.0063
+mp-2629196_Hg: Target = 0.0010, Predicted = 0.1385
+mp-557546_Fe2O3: Target = -1.1790, Predicted = -1.5541
+mp-555760_S: Target = 0.0290, Predicted = -0.5865
+mp-23907_H2: Target = 2.3310, Predicted = -0.0822
+mp-2739136_H2: Target = 0.0020, Predicted = -0.0777
+mp-10869_S: Target = 0.6260, Predicted = -0.4107
+mp-23154_Br: Target = 0.0000, Predicted = 0.0634
+mp-1178958_U: Target = 0.0210, Predicted = -0.0136
+mp-8639_Ru: Target = 0.1310, Predicted = 0.0017
+mp-10654_Te: Target = 0.0470, Predicted = -0.1073
+mp-1096915_Cs: Target = 0.0420, Predicted = -0.0373
+mp-10752_Er: Target = 0.0670, Predicted = 0.0028
+mp-10597_Ag: Target = 0.0080, Predicted = 0.0159
+mp-10617_Sr: Target = 0.2590, Predicted = 0.1101
+mp-2647025_Mn: Target = 0.0530, Predicted = 0.0886
+mp-2646997_Pd: Target = 0.0230, Predicted = -0.0670
+mp-1179802_Rb: Target = 0.0540, Predicted = 0.0476
+mp-510080_Fe2O3: Target = -1.5760, Predicted = -1.8220
+mp-1027525_MoS2: Target = -0.9620, Predicted = -1.0743
+mp-1143_Al2O3: Target = -3.4270, Predicted = -3.3955
+mp-10190_Lu: Target = 0.1030, Predicted = 0.0260
+mp-2647000_Rh: Target = 0.3490, Predicted = 0.0528
+mp-8637_Mo: Target = 0.4110, Predicted = 0.1540
+mp-10661_Tm: Target = 0.1170, Predicted = 0.0770
+mp-21377_Sm: Target = 0.0180, Predicted = -0.0060
+mp-2647008_Al: Target = 0.0320, Predicted = -0.0629
+mp-541848_B: Target = 0.7090, Predicted = 0.1381
+mp-19770_Fe2O3: Target = -1.7070, Predicted = -1.7901
+mp-2352722_Al2O3: Target = -3.2290, Predicted = -3.3299
+mp-1179641_S: Target = 0.3440, Predicted = -0.4378
+mp-6985_Ti: Target = 0.0870, Predicted = 0.0227
+mp-1179414_Sn: Target = 0.0960, Predicted = 0.1119
+mp-1179605_Sb: Target = 0.0500, Predicted = 0.1409
+mp-2647062_Au: Target = 0.0410, Predicted = 0.0976
+mp-10207_Np: Target = 0.4470, Predicted = 0.2820
+mp-20736_Ce: Target = 0.1090, Predicted = 0.2789
+mp-1405065_MoS2: Target = -0.6990, Predicted = -1.0432
+mp-10740_Pa: Target = 0.0300, Predicted = 0.0709
+mp-23153_I: Target = 0.0000, Predicted = -0.0903
+mp-1103107_Li: Target = 0.0550, Predicted = 0.0201
+mp-1178932_Te: Target = 0.0540, Predicted = 0.0160
+mp-1179325_Sr: Target = 0.4000, Predicted = 0.4640
+mp-1096950_Fe: Target = 0.4770, Predicted = 0.1329
+mp-10023_La: Target = 0.1040, Predicted = -0.0086
+mp-22848_Cl2: Target = 0.0000, Predicted = -0.7880
+mp-1096826_As: Target = 0.5590, Predicted = 0.3898
+mp-2739257_K: Target = 0.0000, Predicted = 0.0445
+mp-8638_Tc: Target = 0.0730, Predicted = -0.0018
+mp-10660_Tm: Target = 0.0580, Predicted = 0.0310
+mp-542605_Se: Target = 0.0020, Predicted = 0.1334
+mp-10631_Sb: Target = 0.3020, Predicted = 0.3745
+mp-10750_Dy: Target = 0.0210, Predicted = 0.0211
+mp-10630_Sb: Target = 0.3280, Predicted = 0.4665
+mp-542606_Pu: Target = 0.7910, Predicted = 0.3374
+mp-2206907_O2: Target = 0.0280, Predicted = -0.4831
+mp-6986_Ta: Target = 0.2450, Predicted = 0.0200
+mp-1178392_Fe2O3: Target = -1.5940, Predicted = -1.8200
+mp-23155_Ar: Target = 0.0000, Predicted = -1.4960
+mp-9956_AlCr2C: Target = -0.1720, Predicted = -0.1309
+mp-2421172_O2: Target = 0.9160, Predicted = 0.8686
+mp-2739273_Nb: Target = 0.0120, Predicted = 0.0609
+mp-32591_Al2O3: Target = -3.3690, Predicted = -3.4135
+mp-1245323_Al2O3: Target = -3.0100, Predicted = -3.3196
+mp-8640_Hf: Target = 0.0890, Predicted = 0.0126
+mp-7048_Al2O3: Target = -3.4260, Predicted = -3.4168
+mp-1434_MoS2: Target = -1.3080, Predicted = -1.0923
+mp-9924_Te: Target = 0.1270, Predicted = 0.0883
+mp-7755_Se: Target = 0.2540, Predicted = -0.0247
+mp-20483_Pb: Target = 0.0000, Predicted = -0.0282
+mp-2647117_Zn: Target = 0.0720, Predicted = -0.0015
+mp-2647032_Ir: Target = 0.0630, Predicted = 0.1030
+mp-11534_Np: Target = 0.0000, Predicted = -0.0404
+mp-1025874_MoS2: Target = -0.9620, Predicted = -1.0699
+mp-1096840_Ba: Target = 0.0000, Predicted = -0.0401
+mp-20745_Pb: Target = 0.0200, Predicted = -0.0339
+mp-19981_Gd: Target = 0.0410, Predicted = -0.0075
+mp-8643_Os: Target = 0.1650, Predicted = 0.1971
+mp-10173_Li: Target = 0.0060, Predicted = 0.0009
+mp-10679_Ba: Target = 0.0130, Predicted = -0.0759
+mp-1176403_N2: Target = 1.0880, Predicted = -0.0634
+mp-7163_Tb: Target = 0.0320, Predicted = 0.0318
+mp-10021_Ga: Target = 0.0830, Predicted = -0.0184
+mp-1096861_Cd: Target = 0.0370, Predicted = 0.0492
+mp-1120743_P: Target = 0.8730, Predicted = 0.0546
+mp-22865_CsCl: Target = -2.1720, Predicted = -2.2605
+mp-2739215_O2: Target = 0.0120, Predicted = -0.4977
+mp-2646977_Pd: Target = 0.0450, Predicted = -0.0430
+mp-2647031_Os: Target = 0.8830, Predicted = 0.5140
+mp-8634_Mn: Target = 0.4210, Predicted = 0.1312
+mp-542461_Se: Target = 0.0040, Predicted = 0.1211
+mp-23156_He: Target = 0.0020, Predicted = 0.1361
+mp-12103_N2: Target = 4.6870, Predicted = 1.1320
+mp-7162_Sn: Target = 0.2490, Predicted = 0.0736
+mp-20071_Eu: Target = 0.0410, Predicted = 0.0484
+mp-23158_He: Target = 0.0000, Predicted = 0.0761
+mp-8641_W: Target = 0.4710, Predicted = 0.0641
+mp-1179618_Sb: Target = 0.2350, Predicted = 0.0622
+mp-1147718_C: Target = 0.3890, Predicted = 0.1919
+mp-2647013_Mo: Target = 0.4290, Predicted = 0.0781
+mp-11421_Gd: Target = 0.1500, Predicted = 0.0487
+mp-8633_Cr: Target = 0.4030, Predicted = 0.1395
+mp-2647047_Ir: Target = 0.5890, Predicted = 0.6411
+mp-1179917_Pr: Target = 0.0350, Predicted = 0.0442
+mp-1120767_NaCl: Target = -1.9800, Predicted = -2.0735
+mp-990083_MoS2: Target = -0.8000, Predicted = -1.0729
+mp-2318_Nb2C: Target = -0.5260, Predicted = -0.4984
+mp-23157_Bi: Target = 0.0500, Predicted = 0.0342
+mp-2647057_Co: Target = 0.0900, Predicted = 0.0443
+mp-2254_Al2O3: Target = -3.4060, Predicted = -3.3972
+mp-1096977_H2: Target = 0.4000, Predicted = -0.2568
+mp-23152_Bi: Target = 0.0000, Predicted = 0.0295
+mp-1105018_Al2O3: Target = -2.5560, Predicted = -3.4826
+mp-1096992_Hg: Target = 0.0280, Predicted = 0.1099
+mp-16220_Si: Target = 0.3930, Predicted = 0.0810
+mp-1023939_MoS2: Target = -0.9590, Predicted = -1.0571
+mp-2646993_Rh: Target = 0.0590, Predicted = 0.0752
+mp-12957_O2: Target = 0.0000, Predicted = -0.3985
+mp-555915_S: Target = 0.0140, Predicted = -0.5205
+mp-10683_Ca: Target = 0.4000, Predicted = 0.2471
+mp-10257_Ni: Target = 0.0460, Predicted = 0.0618
+mp-1102442_O2: Target = 0.7400, Predicted = 0.2248
+mp-2351841_Si: Target = 0.4490, Predicted = 0.3053
+mp-1096869_C: Target = 0.1180, Predicted = 0.0609
+mp-557031_S: Target = 0.0340, Predicted = -0.5380
+mp-10024_Ce: Target = 0.2280, Predicted = 0.1450
+mp-1178608_Zr: Target = 1.8020, Predicted = 0.6833
+mp-22046_B: Target = 0.0950, Predicted = 0.0128
+mp-24504_H2: Target = 0.0020, Predicted = -0.0413
+mp-2637304_Al2O3: Target = -2.6430, Predicted = -2.9596
+mp-2646990_W: Target = 0.4960, Predicted = 0.0423
+mp-2647103_Nb: Target = 0.3030, Predicted = 0.1336
+mp-1042086_MoS2: Target = -0.3190, Predicted = -0.9372
+mp-12990_Ti2AlC: Target = -0.6990, Predicted = -0.6313
+mp-10861_Hg: Target = 0.0030, Predicted = 0.0484
+mp-1179643_S: Target = 0.3480, Predicted = -0.2089
+mp-22692_Pb: Target = 0.0420, Predicted = 0.0361
+mp-2646980_C: Target = 0.6430, Predicted = 0.2683
+mp-1179613_Sb: Target = 0.3330, Predicted = 0.0745
+mp-542896_Fe2O3: Target = -1.5910, Predicted = -1.8086
+mp-10765_Ho: Target = 0.0500, Predicted = -0.0056
+mp-2646979_Pt: Target = 0.1070, Predicted = 0.2250
+mp-1096851_Bi: Target = 0.0990, Predicted = 0.0134
+mp-1120447_Si: Target = 0.3730, Predicted = 0.1155
+mp-7761_Sb: Target = 0.2390, Predicted = 0.4198
+mp-1179656_Rb: Target = 0.0000, Predicted = 0.0350
+mp-2516584_C: Target = 0.0020, Predicted = 0.0058
+mp-1179639_S: Target = 0.3550, Predicted = -0.2914
+mp-1102666_Pb: Target = 0.1160, Predicted = -0.0042
+mp-2815_MoS2: Target = -0.9640, Predicted = -1.0154
+mp-557488_S: Target = 0.0120, Predicted = -0.4956
+mp-1238797_MoS2: Target = -0.6070, Predicted = -1.0787
+mp-10751_Dy: Target = 0.1280, Predicted = -0.0116
+mp-10172_Na: Target = 0.0000, Predicted = 0.0212
+mp-2647135_Cd: Target = 0.0650, Predicted = 0.0169
+mp-2647074_V: Target = 0.2540, Predicted = 0.0066
+mp-2646971_Ag: Target = 0.0340, Predicted = 0.1194
+mp-2647037_Re: Target = 0.3180, Predicted = 0.0710
+mp-19858_Sr: Target = 0.2360, Predicted = 0.2001
+mp-12628_Rb: Target = 0.0150, Predicted = -0.0041
+mp-10641_Sc: Target = 0.1020, Predicted = 0.0890
+mp-1179832_Rb: Target = 0.4530, Predicted = 0.0652
+mp-12093_Ge: Target = 0.3340, Predicted = 0.2867
+mp-11334_W: Target = 0.1270, Predicted = 0.1162
+mp-2647022_Pt: Target = 0.0690, Predicted = 0.1148
+mp-1097832_C: Target = 2.6080, Predicted = 2.8478
+mp-1104795_Sb: Target = 0.3340, Predicted = 0.0627
+mp-7236_Ho: Target = 0.1280, Predicted = -0.0050
+mp-10659_Ho: Target = 0.0150, Predicted = -0.0061
+mp-10018_Ac: Target = 0.0220, Predicted = -0.0484
+mp-8636_Nb: Target = 0.3200, Predicted = 0.2398
+mp-32570_Al2O3: Target = -3.3870, Predicted = -3.4191
+mp-558544_MoS2: Target = -0.6860, Predicted = -1.0658
+mp-1104341_Nb: Target = 0.0230, Predicted = 0.0222
+mp-10157_K: Target = 0.0070, Predicted = 0.1151
+mp-12771_Se: Target = 0.5140, Predicted = 0.3063
+mp-1104251_B: Target = 0.2150, Predicted = 0.0463
+mp-8642_Re: Target = 0.0680, Predicted = 0.0163
+mp-8566_Ag: Target = 0.0000, Predicted = 0.0164
+mp-1178952_Te: Target = 0.0490, Predicted = -0.0524
+mp-1178801_W: Target = 1.1980, Predicted = 0.3555
+mp-2739124_Cs: Target = 0.0170, Predicted = 0.0020
+mp-1018809_MoS2: Target = -1.3070, Predicted = -1.0976
+mp-2647017_C: Target = 0.1780, Predicted = 0.0359
+mp-7245_P: Target = 0.0940, Predicted = -0.0189
+mp-1023924_MoS2: Target = -0.9520, Predicted = -1.0116
+mp-11832_Cs: Target = 0.0200, Predicted = 0.1973
+mp-10649_Si: Target = 0.5130, Predicted = 0.4976
+

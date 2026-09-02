@@ -1,0 +1,4295 @@
+Case 1 (Updated): Not Fixed Epocs...It executes until there is no change in the loss.....
+
+Train Set 1910 samples/items/subgroups of (SiO2, TiO2, ZnO, CuO, NiO, CoO, MgO, CaO, SrO, BaO, SnO2, PbO, MnO, Cr2O3, V2O5, MoO3, WO3, Nb2O5, Ta2O5, ZrO2, HfO2, CeO2, La2O3, Y2O3, Sc2O3, In2O3, Ga2O3, AlN, GaN, InN, BN, Si3N4, TiN, ZrN, HfN, CrN, VN, NbN, TaN, MoN, WN, FeN, CoN, NiN, Cu3N, Zn3N2, Mg3N2, Ca3N2,Ti2AlC, Cr2AlC, Nb2AlC, V2AlC, Ta2AlC, Ti3SiC2, Ti3AlC2, Nb4AlC3, Mo2TiAlC2, Ti4AlN3, Al2O3) for Fine-Tune CGCNN Model
+
+Test Set samples - 210 of (seen and Unseen materials).
+
+Writing formation energies to: data/train_cif/id_prop.csv
+Epoch [1] - Loss: 2.631037
+Epoch [2] - Loss: 1.236784
+Epoch [3] - Loss: 0.769330
+Epoch [4] - Loss: 0.532983
+Epoch [5] - Loss: 0.456041
+Epoch [6] - Loss: 0.398039
+Epoch [7] - Loss: 0.347209
+Epoch [8] - Loss: 0.378405
+→ No improvement. Patience: 1/5
+Epoch [9] - Loss: 0.313189
+Epoch [10] - Loss: 0.309942
+Epoch [11] - Loss: 0.264880
+Epoch [12] - Loss: 0.264573
+Epoch [13] - Loss: 0.248484
+Epoch [14] - Loss: 0.247054
+Epoch [15] - Loss: 0.223644
+Epoch [16] - Loss: 0.219188
+Epoch [17] - Loss: 0.228809
+→ No improvement. Patience: 1/5
+Epoch [18] - Loss: 0.201557
+Epoch [19] - Loss: 0.178908
+Epoch [20] - Loss: 0.212087
+→ No improvement. Patience: 1/5
+Epoch [21] - Loss: 0.160674
+Epoch [22] - Loss: 0.166264
+→ No improvement. Patience: 1/5
+Epoch [23] - Loss: 0.193907
+→ No improvement. Patience: 2/5
+Epoch [24] - Loss: 0.168057
+→ No improvement. Patience: 3/5
+Epoch [25] - Loss: 0.173049
+→ No improvement. Patience: 4/5
+Epoch [26] - Loss: 0.142061
+Epoch [27] - Loss: 0.147702
+→ No improvement. Patience: 1/5
+Epoch [28] - Loss: 0.135747
+Epoch [29] - Loss: 0.173718
+→ No improvement. Patience: 1/5
+Epoch [30] - Loss: 0.151583
+→ No improvement. Patience: 2/5
+Epoch [31] - Loss: 0.144844
+→ No improvement. Patience: 3/5
+Epoch [32] - Loss: 0.162589
+→ No improvement. Patience: 4/5
+Epoch [33] - Loss: 0.145036
+→ No improvement. Patience: 5/5
+
+✔ Early stopping triggered. Final loss: 0.135747
+✔ Fine-tuned model saved to: cgcnn_finetuned.pth.tar
+==================================================
+
+
+==================================================
+Batch CGCNN Prediction on test CIF files
+==================================================
+
+Processing: mp-1120767_NaCl.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 12.0000
+         num_bonds: 36.0000
+  mean_bond_length: 2.1042
+   max_bond_length: 2.5000
+   min_bond_length: 1.7500
+   std_bond_length: 0.3566
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -2.0595 eV/atom
+Ground Truth Formation Energy (MP): -1.9796 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-2206907_O2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 8.0000
+         num_bonds: 4.0000
+  mean_bond_length: 1.9375
+   max_bond_length: 2.1250
+   min_bond_length: 0.7500
+   std_bond_length: 0.3662
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.1376 eV/atom
+Ground Truth Formation Energy (MP): 0.0280 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-2351841_Si.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 12.0000
+  mean_bond_length: 1.8125
+   max_bond_length: 2.1250
+   min_bond_length: 1.6250
+   std_bond_length: 0.2253
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.3642 eV/atom
+Ground Truth Formation Energy (MP): 0.4488 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2352722_Al2O3.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 15.0000
+         num_bonds: 36.0000
+  mean_bond_length: 1.5000
+   max_bond_length: 1.7500
+   min_bond_length: 1.1250
+   std_bond_length: 0.2652
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -2.8547 eV/atom
+Ground Truth Formation Energy (MP): -3.2293 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-2421172_O2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 6.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.0417
+   max_bond_length: 2.6250
+   min_bond_length: 0.8750
+   std_bond_length: 0.5893
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.4792 eV/atom
+Ground Truth Formation Energy (MP): 0.9163 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2516584_C.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.4062
+   max_bond_length: 1.7500
+   min_bond_length: 0.8750
+   std_bond_length: 0.3233
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0769 eV/atom
+Ground Truth Formation Energy (MP): 0.0023 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2629196_Hg.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 3.0000
+         num_bonds: 0.0000
+  mean_bond_length: 2.2188
+   max_bond_length: 2.2500
+   min_bond_length: 2.1250
+   std_bond_length: 0.0541
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0216 eV/atom
+Ground Truth Formation Energy (MP): 0.0009 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-2637304_Al2O3.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 10.0000
+         num_bonds: 17.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 2.1250
+   min_bond_length: 1.1250
+   std_bond_length: 0.3953
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -2.6998 eV/atom
+Ground Truth Formation Energy (MP): -2.6434 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-2646971_Ag.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 1.8750
+   max_bond_length: 2.1250
+   min_bond_length: 1.7500
+   std_bond_length: 0.1768
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0326 eV/atom
+Ground Truth Formation Energy (MP): 0.0343 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2646972_Zn.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 1.7500
+   min_bond_length: 1.7500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0517 eV/atom
+Ground Truth Formation Energy (MP): 0.0052 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2646977_Pd.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 1.8333
+   max_bond_length: 2.0000
+   min_bond_length: 1.7500
+   std_bond_length: 0.1179
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0170 eV/atom
+Ground Truth Formation Energy (MP): 0.0448 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2646979_Pt.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 1.8333
+   max_bond_length: 2.0000
+   min_bond_length: 1.7500
+   std_bond_length: 0.1179
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2235 eV/atom
+Ground Truth Formation Energy (MP): 0.1070 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2646980_C.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 6.0000
+         num_bonds: 10.0000
+  mean_bond_length: 1.4167
+   max_bond_length: 1.8750
+   min_bond_length: 1.0000
+   std_bond_length: 0.3118
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.3261 eV/atom
+Ground Truth Formation Energy (MP): 0.6427 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2646990_W.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 1.8125
+   max_bond_length: 1.8750
+   min_bond_length: 1.7500
+   std_bond_length: 0.0625
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.3768 eV/atom
+Ground Truth Formation Energy (MP): 0.4960 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2646993_Rh.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 1.7500
+   min_bond_length: 1.7500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0227 eV/atom
+Ground Truth Formation Energy (MP): 0.0590 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2646997_Pd.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 1.7500
+   min_bond_length: 1.7500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0192 eV/atom
+Ground Truth Formation Energy (MP): 0.0226 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2647000_Rh.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 1.7083
+   max_bond_length: 1.8750
+   min_bond_length: 1.6250
+   std_bond_length: 0.1179
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1917 eV/atom
+Ground Truth Formation Energy (MP): 0.3493 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2647008_Al.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 1.8125
+   max_bond_length: 1.8750
+   min_bond_length: 1.7500
+   std_bond_length: 0.0625
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0712 eV/atom
+Ground Truth Formation Energy (MP): 0.0321 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-2647013_Mo.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 1.8125
+   max_bond_length: 1.8750
+   min_bond_length: 1.7500
+   std_bond_length: 0.0625
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.3201 eV/atom
+Ground Truth Formation Energy (MP): 0.4292 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2647017_C.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 20.0000
+         num_bonds: 30.0000
+  mean_bond_length: 1.4062
+   max_bond_length: 1.7500
+   min_bond_length: 0.8750
+   std_bond_length: 0.3233
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0890 eV/atom
+Ground Truth Formation Energy (MP): 0.1776 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2647022_Pt.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 1.7500
+   min_bond_length: 1.7500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1699 eV/atom
+Ground Truth Formation Energy (MP): 0.0691 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2647025_Mn.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 1.5000
+   max_bond_length: 1.5000
+   min_bond_length: 1.5000
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2560 eV/atom
+Ground Truth Formation Energy (MP): 0.0526 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2647031_Os.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 1.7083
+   max_bond_length: 1.8750
+   min_bond_length: 1.6250
+   std_bond_length: 0.1179
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.4143 eV/atom
+Ground Truth Formation Energy (MP): 0.8828 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2647032_Ir.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 1.7500
+   min_bond_length: 1.7500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0448 eV/atom
+Ground Truth Formation Energy (MP): 0.0629 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2647037_Re.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 1.8333
+   max_bond_length: 2.0000
+   min_bond_length: 1.7500
+   std_bond_length: 0.1179
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1194 eV/atom
+Ground Truth Formation Energy (MP): 0.3183 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2647044_Ta.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 1.8750
+   max_bond_length: 1.8750
+   min_bond_length: 1.8750
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2243 eV/atom
+Ground Truth Formation Energy (MP): 0.2851 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2647047_Ir.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 1.8333
+   max_bond_length: 2.0000
+   min_bond_length: 1.7500
+   std_bond_length: 0.1179
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.3560 eV/atom
+Ground Truth Formation Energy (MP): 0.5890 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2647057_Co.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 1.5833
+   max_bond_length: 1.7500
+   min_bond_length: 1.5000
+   std_bond_length: 0.1179
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1914 eV/atom
+Ground Truth Formation Energy (MP): 0.0896 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2647062_Au.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 1.8750
+   max_bond_length: 2.1250
+   min_bond_length: 1.7500
+   std_bond_length: 0.1768
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0694 eV/atom
+Ground Truth Formation Energy (MP): 0.0219 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2647074_V.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 1.6875
+   max_bond_length: 1.7500
+   min_bond_length: 1.6250
+   std_bond_length: 0.0625
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2515 eV/atom
+Ground Truth Formation Energy (MP): 0.2538 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2647103_Nb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 1.8750
+   max_bond_length: 2.0000
+   min_bond_length: 1.7500
+   std_bond_length: 0.1250
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.3217 eV/atom
+Ground Truth Formation Energy (MP): 0.3025 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2647117_Zn.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 1.8333
+   max_bond_length: 2.0000
+   min_bond_length: 1.7500
+   std_bond_length: 0.1179
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0179 eV/atom
+Ground Truth Formation Energy (MP): 0.0717 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-2647135_Cd.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 2.0000
+   max_bond_length: 2.2500
+   min_bond_length: 1.8750
+   std_bond_length: 0.1768
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0366 eV/atom
+Ground Truth Formation Energy (MP): 0.0653 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2739124_Cs.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 3.5417
+   max_bond_length: 4.0000
+   min_bond_length: 3.3750
+   std_bond_length: 0.2465
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0105 eV/atom
+Ground Truth Formation Energy (MP): 0.0172 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2739136_H2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 1.0000
+  mean_bond_length: 1.9896
+   max_bond_length: 2.2500
+   min_bond_length: 0.5000
+   std_bond_length: 0.4690
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0062 eV/atom
+Ground Truth Formation Energy (MP): 0.0019 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-2739215_O2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 8.0000
+         num_bonds: 4.0000
+  mean_bond_length: 1.9479
+   max_bond_length: 2.2500
+   min_bond_length: 0.7500
+   std_bond_length: 0.3800
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0847 eV/atom
+Ground Truth Formation Energy (MP): 0.0120 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-2739257_K.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 8.0000
+         num_bonds: 32.0000
+  mean_bond_length: 2.9583
+   max_bond_length: 3.1250
+   min_bond_length: 2.8750
+   std_bond_length: 0.0932
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0445 eV/atom
+Ground Truth Formation Energy (MP): 0.0001 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-2739273_Nb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 7.0000
+         num_bonds: 28.0000
+  mean_bond_length: 1.8958
+   max_bond_length: 2.1250
+   min_bond_length: 1.7500
+   std_bond_length: 0.1680
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2299 eV/atom
+Ground Truth Formation Energy (MP): 0.0118 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-3347313_C.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 3.0000
+  mean_bond_length: 1.4062
+   max_bond_length: 1.7500
+   min_bond_length: 0.8750
+   std_bond_length: 0.3233
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0774 eV/atom
+Ground Truth Formation Energy (MP): 0.0000 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1143_Al2O3.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 10.0000
+         num_bonds: 24.0000
+  mean_bond_length: 1.5000
+   max_bond_length: 2.0000
+   min_bond_length: 1.1250
+   std_bond_length: 0.3307
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -3.2484 eV/atom
+Ground Truth Formation Energy (MP): -3.4266 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-1434_MoS2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 3.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 2.0000
+   min_bond_length: 1.5000
+   std_bond_length: 0.2500
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -1.0422 eV/atom
+Ground Truth Formation Energy (MP): -0.9661 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-1456_Fe2O3.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 160.0000
+         num_bonds: 336.0000
+  mean_bond_length: 1.8125
+   max_bond_length: 2.2500
+   min_bond_length: 1.1250
+   std_bond_length: 0.4254
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -1.4846 eV/atom
+Ground Truth Formation Energy (MP): -1.5877 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-1938_Al2O3.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 20.0000
+         num_bonds: 48.0000
+  mean_bond_length: 1.5312
+   max_bond_length: 2.0000
+   min_bond_length: 1.1250
+   std_bond_length: 0.3390
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -3.0602 eV/atom
+Ground Truth Formation Energy (MP): -3.3332 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-2254_Al2O3.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 40.0000
+         num_bonds: 88.0000
+  mean_bond_length: 1.6667
+   max_bond_length: 2.0000
+   min_bond_length: 1.1250
+   std_bond_length: 0.3864
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -3.1736 eV/atom
+Ground Truth Formation Energy (MP): -3.4057 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-2318_Nb2C.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 3.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.8125
+   max_bond_length: 2.0000
+   min_bond_length: 1.3750
+   std_bond_length: 0.2577
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.4043 eV/atom
+Ground Truth Formation Energy (MP): -0.5260 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-2815_MoS2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 6.0000
+         num_bonds: 12.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 2.0000
+   min_bond_length: 1.5000
+   std_bond_length: 0.2500
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -1.1198 eV/atom
+Ground Truth Formation Energy (MP): -0.9644 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-6985_Ti.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.8750
+   max_bond_length: 1.8750
+   min_bond_length: 1.8750
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0318 eV/atom
+Ground Truth Formation Energy (MP): 0.0873 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-6986_Ta.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.8750
+   max_bond_length: 1.8750
+   min_bond_length: 1.8750
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.3168 eV/atom
+Ground Truth Formation Energy (MP): 0.2449 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-7048_Al2O3.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 10.0000
+         num_bonds: 20.0000
+  mean_bond_length: 1.6875
+   max_bond_length: 2.0000
+   min_bond_length: 1.1250
+   std_bond_length: 0.4002
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -3.1926 eV/atom
+Ground Truth Formation Energy (MP): -3.4094 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-7098_Np.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 8.0000
+  mean_bond_length: 1.9167
+   max_bond_length: 2.1250
+   min_bond_length: 1.6250
+   std_bond_length: 0.2125
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1026 eV/atom
+Ground Truth Formation Energy (MP): 0.0962 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-7162_Sn.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 2.1250
+   max_bond_length: 2.3750
+   min_bond_length: 2.0000
+   std_bond_length: 0.1768
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2084 eV/atom
+Ground Truth Formation Energy (MP): 0.2491 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-7163_Tb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.2500
+   max_bond_length: 2.2500
+   min_bond_length: 2.2500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0668 eV/atom
+Ground Truth Formation Energy (MP): 0.0315 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-7236_Ho.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 2.2500
+   max_bond_length: 2.5000
+   min_bond_length: 2.1250
+   std_bond_length: 0.1768
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0560 eV/atom
+Ground Truth Formation Energy (MP): 0.1279 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-7245_P.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.8958
+   max_bond_length: 2.2500
+   min_bond_length: 1.3750
+   std_bond_length: 0.3340
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0590 eV/atom
+Ground Truth Formation Energy (MP): 0.0935 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-7755_Se.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 3.0000
+  mean_bond_length: 2.1250
+   max_bond_length: 2.5000
+   min_bond_length: 1.7500
+   std_bond_length: 0.3750
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2642 eV/atom
+Ground Truth Formation Energy (MP): 0.2541 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-7761_Sb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 2.1250
+   max_bond_length: 2.3750
+   min_bond_length: 2.0000
+   std_bond_length: 0.1768
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2584 eV/atom
+Ground Truth Formation Energy (MP): 0.2385 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-8566_Ag.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 24.0000
+  mean_bond_length: 1.8750
+   max_bond_length: 1.8750
+   min_bond_length: 1.8750
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0237 eV/atom
+Ground Truth Formation Energy (MP): 0.0000 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-8632_V.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.6250
+   max_bond_length: 1.6250
+   min_bond_length: 1.6250
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2446 eV/atom
+Ground Truth Formation Energy (MP): 0.2471 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-8633_Cr.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.6250
+   max_bond_length: 1.6250
+   min_bond_length: 1.6250
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2188 eV/atom
+Ground Truth Formation Energy (MP): 0.4025 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-8634_Mn.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.5000
+   max_bond_length: 1.5000
+   min_bond_length: 1.5000
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2676 eV/atom
+Ground Truth Formation Energy (MP): 0.4206 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-8635_Zr.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.0000
+   max_bond_length: 2.0000
+   min_bond_length: 2.0000
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0945 eV/atom
+Ground Truth Formation Energy (MP): 0.0570 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-8636_Nb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.8750
+   max_bond_length: 1.8750
+   min_bond_length: 1.8750
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2339 eV/atom
+Ground Truth Formation Energy (MP): 0.3202 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-8637_Mo.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 1.7500
+   min_bond_length: 1.7500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.3597 eV/atom
+Ground Truth Formation Energy (MP): 0.4115 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-8638_Tc.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 1.7500
+   min_bond_length: 1.7500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0125 eV/atom
+Ground Truth Formation Energy (MP): 0.0734 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-8639_Ru.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.6250
+   max_bond_length: 1.6250
+   min_bond_length: 1.6250
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1829 eV/atom
+Ground Truth Formation Energy (MP): 0.1310 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-8640_Hf.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.0000
+   max_bond_length: 2.0000
+   min_bond_length: 2.0000
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0934 eV/atom
+Ground Truth Formation Energy (MP): 0.0890 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-8641_W.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 1.7500
+   min_bond_length: 1.7500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.3797 eV/atom
+Ground Truth Formation Energy (MP): 0.4714 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-8642_Re.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 1.7500
+   min_bond_length: 1.7500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0821 eV/atom
+Ground Truth Formation Energy (MP): 0.0684 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-8643_Os.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 1.7500
+   min_bond_length: 1.7500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1725 eV/atom
+Ground Truth Formation Energy (MP): 0.1649 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-9924_Te.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 4.0000
+  mean_bond_length: 2.3750
+   max_bond_length: 2.6250
+   min_bond_length: 1.8750
+   std_bond_length: 0.3536
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0882 eV/atom
+Ground Truth Formation Energy (MP): 0.1274 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-9956_AlCr2C.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 8.0000
+         num_bonds: 24.0000
+  mean_bond_length: 1.6875
+   max_bond_length: 1.7500
+   min_bond_length: 1.6250
+   std_bond_length: 0.0625
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1013 eV/atom
+Ground Truth Formation Energy (MP): -0.1722 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10018_Ac.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.5000
+   max_bond_length: 2.5000
+   min_bond_length: 2.5000
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0352 eV/atom
+Ground Truth Formation Energy (MP): 0.0216 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-10021_Ga.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 8.0000
+  mean_bond_length: 1.8958
+   max_bond_length: 2.3750
+   min_bond_length: 1.7500
+   std_bond_length: 0.2329
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1110 eV/atom
+Ground Truth Formation Energy (MP): 0.0834 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10023_La.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 2.3750
+   max_bond_length: 2.6250
+   min_bond_length: 2.2500
+   std_bond_length: 0.1768
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0420 eV/atom
+Ground Truth Formation Energy (MP): 0.1042 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10024_Ce.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 2.2083
+   max_bond_length: 2.3750
+   min_bond_length: 2.1250
+   std_bond_length: 0.1179
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0926 eV/atom
+Ground Truth Formation Energy (MP): 0.2283 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10157_K.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 3.0000
+   max_bond_length: 3.0000
+   min_bond_length: 3.0000
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0030 eV/atom
+Ground Truth Formation Energy (MP): 0.0069 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10172_Na.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 2.3125
+   max_bond_length: 2.3750
+   min_bond_length: 2.2500
+   std_bond_length: 0.0625
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0182 eV/atom
+Ground Truth Formation Energy (MP): 0.0000 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-10173_Li.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 1.8750
+   max_bond_length: 1.8750
+   min_bond_length: 1.8750
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0317 eV/atom
+Ground Truth Formation Energy (MP): 0.0060 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10190_Lu.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 2.2500
+   max_bond_length: 2.5000
+   min_bond_length: 2.1250
+   std_bond_length: 0.1768
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1689 eV/atom
+Ground Truth Formation Energy (MP): 0.1029 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10207_Np.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 1.8333
+   max_bond_length: 2.0000
+   min_bond_length: 1.7500
+   std_bond_length: 0.1179
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2934 eV/atom
+Ground Truth Formation Energy (MP): 0.4475 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10257_Ni.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 1.5000
+   max_bond_length: 1.5000
+   min_bond_length: 1.5000
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1017 eV/atom
+Ground Truth Formation Energy (MP): 0.0458 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10597_Ag.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 1.8125
+   max_bond_length: 1.8750
+   min_bond_length: 1.7500
+   std_bond_length: 0.0625
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0243 eV/atom
+Ground Truth Formation Energy (MP): 0.0077 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10617_Sr.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.7917
+   max_bond_length: 3.5000
+   min_bond_length: 2.3750
+   std_bond_length: 0.4125
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2840 eV/atom
+Ground Truth Formation Energy (MP): 0.2586 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10630_Sb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.1250
+   max_bond_length: 2.1250
+   min_bond_length: 2.1250
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2920 eV/atom
+Ground Truth Formation Energy (MP): 0.3284 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10631_Sb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 2.0000
+  mean_bond_length: 2.1667
+   max_bond_length: 2.2500
+   min_bond_length: 2.0000
+   std_bond_length: 0.1179
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2516 eV/atom
+Ground Truth Formation Energy (MP): 0.3019 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10641_Sc.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 16.0000
+  mean_bond_length: 2.0833
+   max_bond_length: 2.2500
+   min_bond_length: 2.0000
+   std_bond_length: 0.1179
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0193 eV/atom
+Ground Truth Formation Energy (MP): 0.1022 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10649_Si.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 1.6875
+   max_bond_length: 1.7500
+   min_bond_length: 1.6250
+   std_bond_length: 0.0625
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.4839 eV/atom
+Ground Truth Formation Energy (MP): 0.5129 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10654_Te.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 12.0000
+  mean_bond_length: 2.3750
+   max_bond_length: 2.7500
+   min_bond_length: 2.0000
+   std_bond_length: 0.3750
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.3135 eV/atom
+Ground Truth Formation Energy (MP): 0.0466 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10658_Dy.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 3.0000
+         num_bonds: 18.0000
+  mean_bond_length: 2.2500
+   max_bond_length: 2.2500
+   min_bond_length: 2.2500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0203 eV/atom
+Ground Truth Formation Energy (MP): 0.0116 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-10659_Ho.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 3.0000
+         num_bonds: 18.0000
+  mean_bond_length: 2.1875
+   max_bond_length: 2.2500
+   min_bond_length: 2.1250
+   std_bond_length: 0.0625
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0092 eV/atom
+Ground Truth Formation Energy (MP): 0.0153 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10660_Tm.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.1250
+   max_bond_length: 2.1250
+   min_bond_length: 2.1250
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0567 eV/atom
+Ground Truth Formation Energy (MP): 0.0576 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10661_Tm.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 2.2500
+   max_bond_length: 2.5000
+   min_bond_length: 2.1250
+   std_bond_length: 0.1768
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0871 eV/atom
+Ground Truth Formation Energy (MP): 0.1171 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10679_Ba.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.8750
+   max_bond_length: 2.8750
+   min_bond_length: 2.8750
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0601 eV/atom
+Ground Truth Formation Energy (MP): 0.0130 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-10683_Ca.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 3.0000
+  mean_bond_length: 2.6250
+   max_bond_length: 3.1250
+   min_bond_length: 2.1250
+   std_bond_length: 0.5000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.3793 eV/atom
+Ground Truth Formation Energy (MP): 0.3996 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10740_Pa.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.0000
+   max_bond_length: 2.0000
+   min_bond_length: 2.0000
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0209 eV/atom
+Ground Truth Formation Energy (MP): 0.0296 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-10750_Dy.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 24.0000
+  mean_bond_length: 2.2500
+   max_bond_length: 2.2500
+   min_bond_length: 2.2500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0203 eV/atom
+Ground Truth Formation Energy (MP): 0.0213 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-10751_Dy.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 2.2500
+   max_bond_length: 2.5000
+   min_bond_length: 2.1250
+   std_bond_length: 0.1768
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0215 eV/atom
+Ground Truth Formation Energy (MP): 0.1276 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10752_Er.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.2500
+   max_bond_length: 2.2500
+   min_bond_length: 2.2500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0052 eV/atom
+Ground Truth Formation Energy (MP): 0.0669 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10753_Er.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 2.2500
+   max_bond_length: 2.5000
+   min_bond_length: 2.1250
+   std_bond_length: 0.1768
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0520 eV/atom
+Ground Truth Formation Energy (MP): 0.1394 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10765_Ho.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.2500
+   max_bond_length: 2.2500
+   min_bond_length: 2.2500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0092 eV/atom
+Ground Truth Formation Energy (MP): 0.0498 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10861_Hg.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 3.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.1875
+   max_bond_length: 2.7500
+   min_bond_length: 2.0000
+   std_bond_length: 0.2073
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0234 eV/atom
+Ground Truth Formation Energy (MP): 0.0030 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-10869_S.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 3.0000
+  mean_bond_length: 1.9375
+   max_bond_length: 2.2500
+   min_bond_length: 1.6250
+   std_bond_length: 0.3125
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.6448 eV/atom
+Ground Truth Formation Energy (MP): 0.6264 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-11334_W.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 8.0000
+         num_bonds: 54.0000
+  mean_bond_length: 1.7917
+   max_bond_length: 1.8750
+   min_bond_length: 1.6250
+   std_bond_length: 0.0932
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.3512 eV/atom
+Ground Truth Formation Energy (MP): 0.1269 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-11343_Th.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 2.2500
+   max_bond_length: 2.5000
+   min_bond_length: 2.1250
+   std_bond_length: 0.1768
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0019 eV/atom
+Ground Truth Formation Energy (MP): 0.1515 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-11421_Gd.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 2.3333
+   max_bond_length: 2.5000
+   min_bond_length: 2.2500
+   std_bond_length: 0.1179
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0159 eV/atom
+Ground Truth Formation Energy (MP): 0.1497 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-11446_Tb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 2.2500
+   max_bond_length: 2.5000
+   min_bond_length: 2.1250
+   std_bond_length: 0.1768
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0282 eV/atom
+Ground Truth Formation Energy (MP): 0.1242 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-11534_Np.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 8.0000
+         num_bonds: 16.0000
+  mean_bond_length: 1.8958
+   max_bond_length: 2.2500
+   min_bond_length: 1.5000
+   std_bond_length: 0.2491
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0727 eV/atom
+Ground Truth Formation Energy (MP): 0.0000 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-11698_Tb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 3.0000
+         num_bonds: 18.0000
+  mean_bond_length: 2.2500
+   max_bond_length: 2.2500
+   min_bond_length: 2.2500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0587 eV/atom
+Ground Truth Formation Energy (MP): 0.0035 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-11832_Cs.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 3.5000
+   max_bond_length: 3.5000
+   min_bond_length: 3.5000
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0733 eV/atom
+Ground Truth Formation Energy (MP): 0.0199 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-12093_Ge.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.8750
+   max_bond_length: 1.8750
+   min_bond_length: 1.8750
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2885 eV/atom
+Ground Truth Formation Energy (MP): 0.3340 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-12103_N2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 0.0000
+  mean_bond_length: 2.3750
+   max_bond_length: 2.3750
+   min_bond_length: 2.3750
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 6.0445 eV/atom
+Ground Truth Formation Energy (MP): 4.6873 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-12628_Rb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 3.2500
+   max_bond_length: 3.2500
+   min_bond_length: 3.2500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0675 eV/atom
+Ground Truth Formation Energy (MP): 0.0153 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-12771_Se.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 4.0000
+  mean_bond_length: 2.4167
+   max_bond_length: 2.7500
+   min_bond_length: 1.7500
+   std_bond_length: 0.4714
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0511 eV/atom
+Ground Truth Formation Energy (MP): 0.5141 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-12883_P.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 8.0000
+         num_bonds: 12.0000
+  mean_bond_length: 2.3229
+   max_bond_length: 2.7500
+   min_bond_length: 1.3750
+   std_bond_length: 0.5507
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0611 eV/atom
+Ground Truth Formation Energy (MP): 0.1546 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-12957_O2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 8.0000
+         num_bonds: 4.0000
+  mean_bond_length: 1.6979
+   max_bond_length: 2.0000
+   min_bond_length: 0.7500
+   std_bond_length: 0.3834
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0005 eV/atom
+Ground Truth Formation Energy (MP): 0.0000 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-12990_Ti2AlC.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 8.0000
+         num_bonds: 24.0000
+  mean_bond_length: 1.6875
+   max_bond_length: 1.8750
+   min_bond_length: 1.3750
+   std_bond_length: 0.1875
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.6824 eV/atom
+Ground Truth Formation Energy (MP): -0.6992 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-16220_Si.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 34.0000
+         num_bonds: 68.0000
+  mean_bond_length: 2.2500
+   max_bond_length: 2.5000
+   min_bond_length: 1.7500
+   std_bond_length: 0.3536
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2901 eV/atom
+Ground Truth Formation Energy (MP): 0.3932 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-19770_Fe2O3.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 10.0000
+         num_bonds: 24.0000
+  mean_bond_length: 1.6250
+   max_bond_length: 2.1250
+   min_bond_length: 1.2500
+   std_bond_length: 0.3307
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -1.5935 eV/atom
+Ground Truth Formation Energy (MP): -1.7071 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-19858_Sr.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 6.0000
+         num_bonds: 24.0000
+  mean_bond_length: 2.8125
+   max_bond_length: 3.5000
+   min_bond_length: 2.3750
+   std_bond_length: 0.4881
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1957 eV/atom
+Ground Truth Formation Energy (MP): 0.2364 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-19981_Gd.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 24.0000
+  mean_bond_length: 2.2500
+   max_bond_length: 2.2500
+   min_bond_length: 2.2500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0117 eV/atom
+Ground Truth Formation Energy (MP): 0.0411 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-20071_Eu.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 2.5000
+   max_bond_length: 2.7500
+   min_bond_length: 2.3750
+   std_bond_length: 0.1768
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1341 eV/atom
+Ground Truth Formation Energy (MP): 0.0414 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-20372_Ce.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 24.0000
+  mean_bond_length: 2.1250
+   max_bond_length: 2.1250
+   min_bond_length: 2.1250
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0659 eV/atom
+Ground Truth Formation Energy (MP): 0.0749 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-20483_Pb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.2500
+   max_bond_length: 2.2500
+   min_bond_length: 2.2500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0580 eV/atom
+Ground Truth Formation Energy (MP): 0.0000 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-20736_Ce.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 2.0625
+   max_bond_length: 2.1250
+   min_bond_length: 2.0000
+   std_bond_length: 0.0625
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0951 eV/atom
+Ground Truth Formation Energy (MP): 0.1088 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-20745_Pb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 2.1875
+   max_bond_length: 2.2500
+   min_bond_length: 2.1250
+   std_bond_length: 0.0625
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0724 eV/atom
+Ground Truth Formation Energy (MP): 0.0205 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-21377_Sm.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.2500
+   max_bond_length: 2.2500
+   min_bond_length: 2.2500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0129 eV/atom
+Ground Truth Formation Energy (MP): 0.0180 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-21462_Eu.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 12.0000
+  mean_bond_length: 2.4792
+   max_bond_length: 2.5000
+   min_bond_length: 2.3750
+   std_bond_length: 0.0466
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0695 eV/atom
+Ground Truth Formation Energy (MP): 0.0000 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-21848_F2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 8.0000
+         num_bonds: 0.0000
+  mean_bond_length: 1.5000
+   max_bond_length: 1.5000
+   min_bond_length: 1.5000
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.7629 eV/atom
+Ground Truth Formation Energy (MP): 0.7790 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-22046_B.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 50.0000
+         num_bonds: 148.0000
+  mean_bond_length: 1.5833
+   max_bond_length: 1.8750
+   min_bond_length: 1.0000
+   std_bond_length: 0.4125
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.3774 eV/atom
+Ground Truth Formation Energy (MP): 0.0951 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-22692_Pb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 2.2500
+   max_bond_length: 2.5000
+   min_bond_length: 2.1250
+   std_bond_length: 0.1768
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0191 eV/atom
+Ground Truth Formation Energy (MP): 0.0422 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-22848_Cl2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 2.0000
+  mean_bond_length: 2.2292
+   max_bond_length: 2.5000
+   min_bond_length: 1.2500
+   std_bond_length: 0.3340
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1366 eV/atom
+Ground Truth Formation Energy (MP): 0.0000 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-22851_NaCl.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 8.0000
+  mean_bond_length: 2.0000
+   max_bond_length: 2.2500
+   min_bond_length: 1.8750
+   std_bond_length: 0.1768
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -2.1175 eV/atom
+Ground Truth Formation Energy (MP): -1.8840 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-22862_NaCl.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.1250
+   max_bond_length: 2.5000
+   min_bond_length: 1.7500
+   std_bond_length: 0.3750
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -2.1212 eV/atom
+Ground Truth Formation Energy (MP): -2.0384 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-22865_CsCl.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 8.0000
+  mean_bond_length: 2.3750
+   max_bond_length: 2.6250
+   min_bond_length: 2.2500
+   std_bond_length: 0.1768
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -2.0686 eV/atom
+Ground Truth Formation Energy (MP): -2.1716 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-23152_Bi.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.4688
+   max_bond_length: 2.8750
+   min_bond_length: 1.8750
+   std_bond_length: 0.4273
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0252 eV/atom
+Ground Truth Formation Energy (MP): 0.0000 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-23153_I.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.7917
+   max_bond_length: 3.2500
+   min_bond_length: 1.7500
+   std_bond_length: 0.5112
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1738 eV/atom
+Ground Truth Formation Energy (MP): 0.0000 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-23154_Br.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 2.0000
+  mean_bond_length: 2.5417
+   max_bond_length: 3.0000
+   min_bond_length: 1.5000
+   std_bond_length: 0.4742
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.3116 eV/atom
+Ground Truth Formation Energy (MP): 0.0000 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-23155_Ar.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 0.0000
+  mean_bond_length: 2.3750
+   max_bond_length: 2.3750
+   min_bond_length: 2.3750
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0761
+  std_atom_feature: 0.2651
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1449 eV/atom
+Ground Truth Formation Energy (MP): 0.0000 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-23156_He.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 0.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 1.7500
+   min_bond_length: 1.7500
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0761
+  std_atom_feature: 0.2651
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1279 eV/atom
+Ground Truth Formation Energy (MP): 0.0015 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-23157_Bi.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.3646
+   max_bond_length: 2.8750
+   min_bond_length: 2.0000
+   std_bond_length: 0.3286
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1353 eV/atom
+Ground Truth Formation Energy (MP): 0.0503 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-23158_He.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 0.0000
+  mean_bond_length: 1.8333
+   max_bond_length: 2.0000
+   min_bond_length: 1.7500
+   std_bond_length: 0.1179
+ mean_atom_feature: 0.0761
+  std_atom_feature: 0.2651
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1949 eV/atom
+Ground Truth Formation Energy (MP): 0.0000 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-23907_H2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 0.0000
+  mean_bond_length: 2.4375
+   max_bond_length: 2.5000
+   min_bond_length: 2.3750
+   std_bond_length: 0.0625
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 2.0284 eV/atom
+Ground Truth Formation Energy (MP): 2.3308 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-24504_H2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 2.0000
+  mean_bond_length: 1.9375
+   max_bond_length: 2.3750
+   min_bond_length: 0.5000
+   std_bond_length: 0.4801
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0442 eV/atom
+Ground Truth Formation Energy (MP): 0.0024 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-32570_Al2O3.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 40.0000
+         num_bonds: 84.0000
+  mean_bond_length: 1.7083
+   max_bond_length: 2.0000
+   min_bond_length: 1.1250
+   std_bond_length: 0.4125
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -3.2282 eV/atom
+Ground Truth Formation Energy (MP): -3.3870 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-32591_Al2O3.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 80.0000
+         num_bonds: 170.0000
+  mean_bond_length: 1.4792
+   max_bond_length: 1.8750
+   min_bond_length: 1.1250
+   std_bond_length: 0.2787
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -3.1778 eV/atom
+Ground Truth Formation Energy (MP): -3.3695 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-510080_Fe2O3.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 20.0000
+         num_bonds: 48.0000
+  mean_bond_length: 1.6458
+   max_bond_length: 2.1250
+   min_bond_length: 1.2500
+   std_bond_length: 0.3492
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -1.6354 eV/atom
+Ground Truth Formation Energy (MP): -1.5764 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-541848_B.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 108.0000
+         num_bonds: 336.0000
+  mean_bond_length: 1.5000
+   max_bond_length: 2.0000
+   min_bond_length: 1.0000
+   std_bond_length: 0.3785
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1051 eV/atom
+Ground Truth Formation Energy (MP): 0.7091 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-542461_Se.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 32.0000
+         num_bonds: 32.0000
+  mean_bond_length: 2.3438
+   max_bond_length: 2.7500
+   min_bond_length: 1.5000
+   std_bond_length: 0.3924
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0792 eV/atom
+Ground Truth Formation Energy (MP): 0.0036 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-542605_Se.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 32.0000
+         num_bonds: 32.0000
+  mean_bond_length: 2.3958
+   max_bond_length: 3.0000
+   min_bond_length: 1.5000
+   std_bond_length: 0.4355
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0771 eV/atom
+Ground Truth Formation Energy (MP): 0.0018 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-542606_Pu.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 17.0000
+         num_bonds: 80.0000
+  mean_bond_length: 1.9583
+   max_bond_length: 2.1250
+   min_bond_length: 1.8750
+   std_bond_length: 0.1179
+ mean_atom_feature: 0.0761
+  std_atom_feature: 0.2651
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1509 eV/atom
+Ground Truth Formation Energy (MP): 0.7909 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-542896_Fe2O3.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 40.0000
+         num_bonds: 88.0000
+  mean_bond_length: 1.6146
+   max_bond_length: 2.0000
+   min_bond_length: 1.2500
+   std_bond_length: 0.3286
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -1.4558 eV/atom
+Ground Truth Formation Energy (MP): -1.5912 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-542909_Mn.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 20.0000
+         num_bonds: 120.0000
+  mean_bond_length: 1.6875
+   max_bond_length: 1.7500
+   min_bond_length: 1.6250
+   std_bond_length: 0.0625
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1957 eV/atom
+Ground Truth Formation Energy (MP): 0.0399 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-555760_S.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 9.0000
+         num_bonds: 9.0000
+  mean_bond_length: 2.1667
+   max_bond_length: 2.6250
+   min_bond_length: 1.2500
+   std_bond_length: 0.4545
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0607 eV/atom
+Ground Truth Formation Energy (MP): 0.0294 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-555915_S.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 72.0000
+         num_bonds: 72.0000
+  mean_bond_length: 2.2083
+   max_bond_length: 2.7500
+   min_bond_length: 1.2500
+   std_bond_length: 0.4796
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0322 eV/atom
+Ground Truth Formation Energy (MP): 0.0136 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-556269_S.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 72.0000
+         num_bonds: 72.0000
+  mean_bond_length: 2.1771
+   max_bond_length: 2.6250
+   min_bond_length: 1.2500
+   std_bond_length: 0.4403
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0174 eV/atom
+Ground Truth Formation Energy (MP): 0.0313 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-557031_S.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 32.0000
+         num_bonds: 32.0000
+  mean_bond_length: 2.1667
+   max_bond_length: 2.7500
+   min_bond_length: 1.2500
+   std_bond_length: 0.4686
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0365 eV/atom
+Ground Truth Formation Energy (MP): 0.0337 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-557376_S.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 20.0000
+         num_bonds: 20.0000
+  mean_bond_length: 2.2500
+   max_bond_length: 2.6250
+   min_bond_length: 1.2500
+   std_bond_length: 0.4841
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0308 eV/atom
+Ground Truth Formation Energy (MP): 0.0267 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-557488_S.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 36.0000
+         num_bonds: 36.0000
+  mean_bond_length: 2.1771
+   max_bond_length: 2.6250
+   min_bond_length: 1.2500
+   std_bond_length: 0.4606
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0876 eV/atom
+Ground Truth Formation Energy (MP): 0.0123 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-557546_Fe2O3.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 30.0000
+         num_bonds: 60.0000
+  mean_bond_length: 1.7083
+   max_bond_length: 2.1250
+   min_bond_length: 1.1250
+   std_bond_length: 0.3656
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -1.2801 eV/atom
+Ground Truth Formation Energy (MP): -1.1793 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-1096826_As.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.8750
+   max_bond_length: 1.8750
+   min_bond_length: 1.8750
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2732 eV/atom
+Ground Truth Formation Energy (MP): 0.5586 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1096835_Ba.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 10.0000
+  mean_bond_length: 2.8021
+   max_bond_length: 3.2500
+   min_bond_length: 2.1250
+   std_bond_length: 0.3552
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2119 eV/atom
+Ground Truth Formation Energy (MP): 0.5135 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1096840_Ba.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 8.0000
+  mean_bond_length: 2.8958
+   max_bond_length: 3.2500
+   min_bond_length: 2.7500
+   std_bond_length: 0.2094
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0105 eV/atom
+Ground Truth Formation Energy (MP): 0.0001 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-1096851_Bi.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.4167
+   max_bond_length: 2.8750
+   min_bond_length: 2.0000
+   std_bond_length: 0.4187
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0604 eV/atom
+Ground Truth Formation Energy (MP): 0.0990 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1096861_Cd.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.0000
+   max_bond_length: 2.0000
+   min_bond_length: 2.0000
+   std_bond_length: 0.0000
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0906 eV/atom
+Ground Truth Formation Energy (MP): 0.0371 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1096869_C.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 71.0000
+         num_bonds: 97.0000
+  mean_bond_length: 1.4062
+   max_bond_length: 1.7500
+   min_bond_length: 0.8750
+   std_bond_length: 0.3233
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1388 eV/atom
+Ground Truth Formation Energy (MP): 0.1179 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1096915_Cs.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 3.0000
+  mean_bond_length: 3.4792
+   max_bond_length: 3.8750
+   min_bond_length: 3.2500
+   std_bond_length: 0.2543
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0480 eV/atom
+Ground Truth Formation Energy (MP): 0.0422 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1096950_Fe.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 4.0000
+  mean_bond_length: 1.7083
+   max_bond_length: 2.1250
+   min_bond_length: 1.5000
+   std_bond_length: 0.2946
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.4039 eV/atom
+Ground Truth Formation Energy (MP): 0.4767 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1096977_H2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 1.0000
+  mean_bond_length: 1.4375
+   max_bond_length: 1.7500
+   min_bond_length: 0.6250
+   std_bond_length: 0.4002
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.3200 eV/atom
+Ground Truth Formation Energy (MP): 0.4001 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1096992_Hg.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 12.0000
+  mean_bond_length: 2.3333
+   max_bond_length: 2.6250
+   min_bond_length: 2.1250
+   std_bond_length: 0.2125
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0928 eV/atom
+Ground Truth Formation Energy (MP): 0.0282 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1097832_C.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 4.0000
+  mean_bond_length: 1.5000
+   max_bond_length: 2.0000
+   min_bond_length: 1.0000
+   std_bond_length: 0.4082
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 3.8921 eV/atom
+Ground Truth Formation Energy (MP): 2.6077 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1102442_O2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 12.0000
+         num_bonds: 8.0000
+  mean_bond_length: 1.5417
+   max_bond_length: 1.7500
+   min_bond_length: 0.7500
+   std_bond_length: 0.2857
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2479 eV/atom
+Ground Truth Formation Energy (MP): 0.7396 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1102666_Pb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 12.0000
+         num_bonds: 36.0000
+  mean_bond_length: 2.3333
+   max_bond_length: 2.7500
+   min_bond_length: 2.0000
+   std_bond_length: 0.2301
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1035 eV/atom
+Ground Truth Formation Energy (MP): 0.1159 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1103107_Li.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 12.0000
+         num_bonds: 44.0000
+  mean_bond_length: 1.9167
+   max_bond_length: 2.1250
+   min_bond_length: 1.7500
+   std_bond_length: 0.1382
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1159 eV/atom
+Ground Truth Formation Energy (MP): 0.0554 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1104251_B.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 15.0000
+         num_bonds: 41.0000
+  mean_bond_length: 1.5417
+   max_bond_length: 1.8750
+   min_bond_length: 1.0000
+   std_bond_length: 0.2946
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.3705 eV/atom
+Ground Truth Formation Energy (MP): 0.2147 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1104341_Nb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 7.0000
+         num_bonds: 28.0000
+  mean_bond_length: 1.8750
+   max_bond_length: 2.1250
+   min_bond_length: 1.7500
+   std_bond_length: 0.1443
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2749 eV/atom
+Ground Truth Formation Energy (MP): 0.0232 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1104795_Sb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 14.0000
+         num_bonds: 34.0000
+  mean_bond_length: 2.3542
+   max_bond_length: 2.8750
+   min_bond_length: 1.8750
+   std_bond_length: 0.3340
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2246 eV/atom
+Ground Truth Formation Energy (MP): 0.3337 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1105018_Al2O3.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 10.0000
+         num_bonds: 24.0000
+  mean_bond_length: 1.6250
+   max_bond_length: 2.0000
+   min_bond_length: 1.2500
+   std_bond_length: 0.3750
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -2.5273 eV/atom
+Ground Truth Formation Energy (MP): -2.5559 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-1120447_Si.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 8.0000
+         num_bonds: 19.0000
+  mean_bond_length: 1.9062
+   max_bond_length: 2.3750
+   min_bond_length: 1.5000
+   std_bond_length: 0.3312
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.3495 eV/atom
+Ground Truth Formation Energy (MP): 0.3725 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1120743_P.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 2.0000
+  mean_bond_length: 3.3854
+   max_bond_length: 4.1250
+   min_bond_length: 1.2500
+   std_bond_length: 0.8076
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.7670 eV/atom
+Ground Truth Formation Energy (MP): 0.8730 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1147718_C.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 120.0000
+         num_bonds: 184.0000
+  mean_bond_length: 1.4375
+   max_bond_length: 2.1250
+   min_bond_length: 0.8750
+   std_bond_length: 0.3698
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2324 eV/atom
+Ground Truth Formation Energy (MP): 0.3887 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1176403_N2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 4.0000
+  mean_bond_length: 1.6667
+   max_bond_length: 2.1250
+   min_bond_length: 0.7500
+   std_bond_length: 0.4769
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 1.2581 eV/atom
+Ground Truth Formation Energy (MP): 1.0883 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1178392_Fe2O3.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 40.0000
+         num_bonds: 96.0000
+  mean_bond_length: 1.6250
+   max_bond_length: 2.1250
+   min_bond_length: 1.2500
+   std_bond_length: 0.3307
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -1.5753 eV/atom
+Ground Truth Formation Energy (MP): -1.5942 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-1178608_Zr.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 3.0000
+  mean_bond_length: 2.5000
+   max_bond_length: 3.1250
+   min_bond_length: 1.8750
+   std_bond_length: 0.6250
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 1.5640 eV/atom
+Ground Truth Formation Energy (MP): 1.8016 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1178801_W.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 20.0000
+         num_bonds: 77.0000
+  mean_bond_length: 1.8958
+   max_bond_length: 2.3750
+   min_bond_length: 1.6250
+   std_bond_length: 0.3097
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.5986 eV/atom
+Ground Truth Formation Energy (MP): 1.1981 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1178932_Te.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.3750
+   max_bond_length: 2.7500
+   min_bond_length: 2.0000
+   std_bond_length: 0.3750
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2834 eV/atom
+Ground Truth Formation Energy (MP): 0.0541 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1178952_Te.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 12.0000
+  mean_bond_length: 2.4062
+   max_bond_length: 2.8750
+   min_bond_length: 1.8750
+   std_bond_length: 0.3924
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2708 eV/atom
+Ground Truth Formation Energy (MP): 0.0491 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1178958_U.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 8.0000
+         num_bonds: 16.0000
+  mean_bond_length: 1.9792
+   max_bond_length: 2.2500
+   min_bond_length: 1.6250
+   std_bond_length: 0.2594
+ mean_atom_feature: 0.0870
+  std_atom_feature: 0.2818
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.4117 eV/atom
+Ground Truth Formation Energy (MP): 0.0207 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1179325_Sr.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 1.0000
+         num_bonds: 3.0000
+  mean_bond_length: 2.8750
+   max_bond_length: 3.3750
+   min_bond_length: 2.3750
+   std_bond_length: 0.5000
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.5812 eV/atom
+Ground Truth Formation Energy (MP): 0.3997 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1179414_Sn.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 8.0000
+         num_bonds: 40.0000
+  mean_bond_length: 2.1667
+   max_bond_length: 2.5000
+   min_bond_length: 2.0000
+   std_bond_length: 0.1559
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1688 eV/atom
+Ground Truth Formation Energy (MP): 0.0965 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1179605_Sb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.3542
+   max_bond_length: 2.7500
+   min_bond_length: 1.8750
+   std_bond_length: 0.3980
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0840 eV/atom
+Ground Truth Formation Energy (MP): 0.0505 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1179613_Sb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 14.0000
+         num_bonds: 38.0000
+  mean_bond_length: 2.3125
+   max_bond_length: 3.0000
+   min_bond_length: 1.8750
+   std_bond_length: 0.4254
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2198 eV/atom
+Ground Truth Formation Energy (MP): 0.3333 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1179618_Sb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 14.0000
+         num_bonds: 37.0000
+  mean_bond_length: 2.5000
+   max_bond_length: 3.1250
+   min_bond_length: 1.8750
+   std_bond_length: 0.5863
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1394 eV/atom
+Ground Truth Formation Energy (MP): 0.2346 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1179639_S.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 2.0000
+  mean_bond_length: 2.2396
+   max_bond_length: 3.0000
+   min_bond_length: 1.1250
+   std_bond_length: 0.4960
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0929 eV/atom
+Ground Truth Formation Energy (MP): 0.3550 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1179641_S.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.2604
+   max_bond_length: 2.6250
+   min_bond_length: 1.2500
+   std_bond_length: 0.4129
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.2577 eV/atom
+Ground Truth Formation Energy (MP): 0.3444 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1179643_S.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 4.0000
+         num_bonds: 4.0000
+  mean_bond_length: 2.5938
+   max_bond_length: 3.1250
+   min_bond_length: 1.2500
+   std_bond_length: 0.6577
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.1846 eV/atom
+Ground Truth Formation Energy (MP): 0.3484 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1179656_Rb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 8.0000
+         num_bonds: 32.0000
+  mean_bond_length: 3.1979
+   max_bond_length: 3.6250
+   min_bond_length: 3.0000
+   std_bond_length: 0.2070
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0617 eV/atom
+Ground Truth Formation Energy (MP): 0.0000 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1179802_Rb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 8.0000
+         num_bonds: 25.0000
+  mean_bond_length: 3.2188
+   max_bond_length: 3.6250
+   min_bond_length: 2.8750
+   std_bond_length: 0.2937
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): 0.0613 eV/atom
+Ground Truth Formation Energy (MP): 0.0536 eV/atom
+Stability: Thermodynamically unstable.
+
+Processing: mp-1179832_Rb.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 8.0000
+         num_bonds: 8.0000
+  mean_bond_length: 4.6458
+   max_bond_length: 5.0000
+   min_bond_length: 2.8750
+   std_bond_length: 0.7919
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0385 eV/atom
+Ground Truth Formation Energy (MP): 0.4525 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-1179917_Pr.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 3.0000
+         num_bonds: 18.0000
+  mean_bond_length: 2.3542
+   max_bond_length: 2.3750
+   min_bond_length: 2.2500
+   std_bond_length: 0.0466
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.0593 eV/atom
+Ground Truth Formation Energy (MP): 0.0352 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-1245323_Al2O3.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 100.0000
+         num_bonds: 178.0000
+  mean_bond_length: 1.6146
+   max_bond_length: 2.0000
+   min_bond_length: 1.1250
+   std_bond_length: 0.3552
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -3.0210 eV/atom
+Ground Truth Formation Energy (MP): -3.0097 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-1042086_MoS2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 6.0000
+         num_bonds: 8.0000
+  mean_bond_length: 2.1667
+   max_bond_length: 2.7500
+   min_bond_length: 1.3750
+   std_bond_length: 0.5803
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.2572 eV/atom
+Ground Truth Formation Energy (MP): -0.3186 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-1027525_MoS2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 12.0000
+         num_bonds: 24.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 2.0000
+   min_bond_length: 1.5000
+   std_bond_length: 0.2500
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -1.0461 eV/atom
+Ground Truth Formation Energy (MP): -0.9625 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-1023939_MoS2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 6.0000
+         num_bonds: 12.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 2.0000
+   min_bond_length: 1.5000
+   std_bond_length: 0.2500
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -1.0795 eV/atom
+Ground Truth Formation Energy (MP): -0.9589 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-1238797_MoS2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 3.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 2.0000
+   min_bond_length: 1.5000
+   std_bond_length: 0.2500
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.8784 eV/atom
+Ground Truth Formation Energy (MP): -0.6698 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-558544_MoS2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 3.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 2.0000
+   min_bond_length: 1.5000
+   std_bond_length: 0.2500
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.8710 eV/atom
+Ground Truth Formation Energy (MP): -0.6864 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-1023924_MoS2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 3.0000
+         num_bonds: 6.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 2.0000
+   min_bond_length: 1.5000
+   std_bond_length: 0.2500
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -1.1207 eV/atom
+Ground Truth Formation Energy (MP): -0.9517 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-1025874_MoS2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 9.0000
+         num_bonds: 18.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 2.0000
+   min_bond_length: 1.5000
+   std_bond_length: 0.2500
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -1.0689 eV/atom
+Ground Truth Formation Energy (MP): -0.9617 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-1018809_MoS2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 6.0000
+         num_bonds: 12.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 2.0000
+   min_bond_length: 1.5000
+   std_bond_length: 0.2500
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -1.0564 eV/atom
+Ground Truth Formation Energy (MP): -0.9638 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-1405065_MoS2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 12.0000
+         num_bonds: 24.0000
+  mean_bond_length: 1.8438
+   max_bond_length: 2.3750
+   min_bond_length: 1.5000
+   std_bond_length: 0.3351
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -0.6718 eV/atom
+Ground Truth Formation Energy (MP): -0.6986 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-990083_MoS2.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 54.0000
+         num_bonds: 104.0000
+  mean_bond_length: 1.7500
+   max_bond_length: 2.0000
+   min_bond_length: 1.5000
+   std_bond_length: 0.2500
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -1.0067 eV/atom
+Ground Truth Formation Energy (MP): -0.7998 eV/atom
+Stability: Thermodynamically stable.
+
+Processing: mp-573697_CsCl.cif
+
+ Extracting features from CIF file...
+
+Extracted Features:
+         num_atoms: 2.0000
+         num_bonds: 6.0000
+  mean_bond_length: 2.6875
+   max_bond_length: 3.1250
+   min_bond_length: 2.2500
+   std_bond_length: 0.4375
+ mean_atom_feature: 0.0978
+  std_atom_feature: 0.2971
+
+Running CGCNN prediction...
+✔ CGCNN prediction complete
+Predicted Formation Energy (CGCNN): -1.9141 eV/atom
+Ground Truth Formation Energy (MP): -2.1645 eV/atom
+Stability: Thermodynamically stable.
+
+==================================================
+Test Accuracy: 82.94% (175/211 correct predictions)
+==================================================
+
+Mean Absolute Error (MAE): 0.1235 eV/atom
+Mean Squared Error (MSE): 0.0424 (eV/atom)^2
+Plot saved as 'stability_bar_chart_CGCNN_Fine_Tune_200.png'
+Plot saved as '2d_histogram_cgcnn_vs_truth.png'
+
+==================================================
+Batch analysis complete
+==================================================

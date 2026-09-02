@@ -1,0 +1,77 @@
+(base) root@fd3643bcbac3:~/my_codes/cgcnn_new# python predict_finetune_CGCNN_BCN_hybrid.py     pre-trained/formation-energy-per-atom.pth     --b-path data/B_materials     --c-path data/C_materials     --n-path data/N_materials     -b 64     -e 50
+
+5456 samples found in data/B_materials
+5281 samples found in data/C_materials
+8459 samples found in data/N_materials
+
+Starting Fine-Tuning...
+
+Epoch [1/50] Loss: 0.140779
+Epoch [2/50] Loss: 0.085281
+Epoch [3/50] Loss: 0.070203
+Epoch [4/50] Loss: 0.059133
+Epoch [5/50] Loss: 0.052884
+Epoch [6/50] Loss: 0.051129
+Epoch [7/50] Loss: 0.044671
+Epoch [8/50] Loss: 0.043403
+Epoch [9/50] Loss: 0.041191
+Epoch [10/50] Loss: 0.039745
+Epoch [11/50] Loss: 0.038493
+Epoch [12/50] Loss: 0.036224
+Epoch [13/50] Loss: 0.035917
+Epoch [14/50] Loss: 0.035184
+Epoch [15/50] Loss: 0.033183
+Epoch [16/50] Loss: 0.031968
+Epoch [17/50] Loss: 0.031284
+Epoch [18/50] Loss: 0.030000
+Epoch [19/50] Loss: 0.028268
+Epoch [20/50] Loss: 0.027926
+Epoch [21/50] Loss: 0.025505
+Epoch [22/50] Loss: 0.027793
+Epoch [23/50] Loss: 0.025095
+Epoch [24/50] Loss: 0.024888
+Epoch [25/50] Loss: 0.024402
+Epoch [26/50] Loss: 0.024386
+Epoch [27/50] Loss: 0.022968
+Epoch [28/50] Loss: 0.022444
+Epoch [29/50] Loss: 0.021894
+Epoch [30/50] Loss: 0.021389
+Epoch [31/50] Loss: 0.021570
+Epoch [32/50] Loss: 0.020284
+Epoch [33/50] Loss: 0.020023
+Epoch [34/50] Loss: 0.019592
+Epoch [35/50] Loss: 0.019131
+Epoch [36/50] Loss: 0.018513
+Epoch [37/50] Loss: 0.017344
+Epoch [38/50] Loss: 0.017185
+Epoch [39/50] Loss: 0.018634
+Epoch [40/50] Loss: 0.016622
+Epoch [41/50] Loss: 0.016531
+Epoch [42/50] Loss: 0.016901
+Epoch [43/50] Loss: 0.016031
+Epoch [44/50] Loss: 0.015731
+Epoch [45/50] Loss: 0.015557
+Epoch [46/50] Loss: 0.015354
+Epoch [47/50] Loss: 0.016243
+Epoch [48/50] Loss: 0.014731
+Epoch [49/50] Loss: 0.014949
+Epoch [50/50] Loss: 0.015033
+
+
+=== TEST RESULTS: Boron ===
+MAE: 0.112407 eV/atom
+MSE: 0.022990 (eV/atom)^2
+Saved: test_results_Boron.csv, Boron_scatter.png
+
+
+=== TEST RESULTS: Carbon ===
+MAE: 0.113147 eV/atom
+MSE: 0.026064 (eV/atom)^2
+Saved: test_results_Carbon.csv, Carbon_scatter.png
+
+=== TEST RESULTS: Nitrogen ===
+MAE: 0.129436 eV/atom
+MSE: 0.029966 (eV/atom)^2
+Saved: test_results_Nitrogen.csv, Nitrogen_scatter.png
+
+
