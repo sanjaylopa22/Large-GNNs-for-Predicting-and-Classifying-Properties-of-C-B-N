@@ -51,7 +51,7 @@ warnings.filterwarnings("ignore")
 # ===============================
 # USER CONFIG
 # ===============================
-MP_API_KEY = os.environ.get("MP_API_KEY", "jg5YFc4i3f7KmWdZNCALVB97QIgZTji5")
+MP_API_KEY = os.environ.get("MP_API_KEY", "Your_API_KEY")
 
 ELEMENTS = ["B", "C", "N"]
 
