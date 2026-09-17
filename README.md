@@ -180,13 +180,15 @@ python cgcnn_mae_loss_ablation.py cgcnn_pretrained_checkpoint.pth.tar ./data/C_m
 python cgcnn_mae_loss_ablation.py cgcnn_pretrained_checkpoint.pth.tar ./data/N_materials --output-dir output_CGCNN_MAE_ablation/N
 
 **3. Downstream stability classification on the ALIGNN ablation's predictions**
+
 export MP_API_KEY="your_materials_project_api_key"
 python stability_classification_ALIGNN_unfrozen.py
 
-**Error metrics / diagnostics (residuals + Carbon hybridization stratification)** ──
+**Error metrics / diagnostics (residuals + Carbon hybridization stratification)**
+
 python error_diagnostics.py
 
-**Inference timing — run each from its OWN venv (different libraries, per earlier venv conflicts)** ──
+**Inference timing — run each from its OWN venv (different libraries, per earlier venv conflicts)**
 
 **CGCNN timing (from your CGCNN venv)**
 python benchmark_cgcnn_timing.py cgcnn_finetuned.pth.tar ./examples/sample_data/B_materials
