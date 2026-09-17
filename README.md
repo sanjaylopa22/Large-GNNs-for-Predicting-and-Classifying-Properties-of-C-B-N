@@ -191,9 +191,11 @@ python error_diagnostics.py
 **Inference timing — run each from its OWN venv (different libraries, per earlier venv conflicts)**
 
 **CGCNN timing (from your CGCNN venv)**
+
 python benchmark_cgcnn_timing.py cgcnn_finetuned.pth.tar ./examples/sample_data/B_materials
 
 **ALIGNN timing (from your ALIGNN venv, e.g. alignn-main/venv, in alignn-main/alignn/)**
+
 python benchmark_alignn_timing.py
 
 ---
