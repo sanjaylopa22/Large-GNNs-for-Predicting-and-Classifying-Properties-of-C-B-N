@@ -65,7 +65,7 @@ warnings.filterwarnings("ignore")
 # ===============================
 # USER CONFIG
 # ===============================
-MP_API_KEY = os.environ.get("MP_API_KEY", "jg5YFc4i3f7KmWdZNCALVB97QIgZTji5")
+MP_API_KEY = os.environ.get("MP_API_KEY", "Your_API_KEY")
 # NOTE: a real API key was previously hardcoded here as a fallback default
 # in an earlier version of this script. It has been removed. Rotate that
 # key on the Materials Project dashboard if it was ever committed/shared,
