@@ -172,32 +172,34 @@ Prediction CSVs use different column names depending on the model — the stabil
 ## Ablation
 
 **1. ALIGNN — unfrozen-backbone ablation (all three elements in one run)**
+```bash
 python alignn_unfrozen_backbone_ablation.py
-
+```
 **2. CGCNN — MAE-loss ablation (run once per element, with a distinct output dir each time)**
+```bash
 python cgcnn_mae_loss_ablation.py cgcnn_pretrained_checkpoint.pth.tar ./data/B_materials --output-dir output_CGCNN_MAE_ablation/B
 python cgcnn_mae_loss_ablation.py cgcnn_pretrained_checkpoint.pth.tar ./data/C_materials --output-dir output_CGCNN_MAE_ablation/C
 python cgcnn_mae_loss_ablation.py cgcnn_pretrained_checkpoint.pth.tar ./data/N_materials --output-dir output_CGCNN_MAE_ablation/N
-
+```
 **3. Downstream stability classification on the ALIGNN ablation's predictions**
-
+```bash
 export MP_API_KEY="your_materials_project_api_key"
 python stability_classification_ALIGNN_unfrozen.py
-
+```
 **Error metrics / diagnostics (residuals + Carbon hybridization stratification)**
-
+```bash
 python error_diagnostics.py
-
+```
 **Inference timing — run each from its OWN venv (different libraries, per earlier venv conflicts)**
 
 **CGCNN timing (from your CGCNN venv)**
-
+```bash
 python benchmark_cgcnn_timing.py cgcnn_finetuned.pth.tar ./examples/sample_data/B_materials
-
+```
 **ALIGNN timing (from your ALIGNN venv, e.g. alignn-main/venv, in alignn-main/alignn/)**
-
+```bash
 python benchmark_alignn_timing.py
-
+```
 ---
 
 ## Results Summary
