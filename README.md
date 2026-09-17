@@ -150,7 +150,7 @@ Each script:
 | Optimizer | Adam | Adam | Adam |
 | Loss function | MSE | MSE | MAE |
 | Train/test split | 80/20 (seed 42) | 80/20 (seed 42) | 80/20 (seed 42) |
-| Backbone frozen | No | Yes (output head only trainable) | No |
+| Backbone frozen | No | Both | No |
 | Validation split | None | None | None |
 | Early stopping | No (fixed epoch count) | No (fixed epoch count) | No (fixed epoch count) |
 
